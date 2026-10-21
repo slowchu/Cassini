@@ -8,6 +8,7 @@ import unittest
 import wave
 import subprocess
 import sys
+from unittest.mock import patch
 from PIL import Image
 from saturn_kit.api import Profile, differences, pin, python_executable, read_json, run, write_json
 
@@ -162,6 +163,20 @@ class CoreTests(unittest.TestCase):
         self.profile.write_text(json.dumps(cfg))
         with self.assertRaisesRegex(ValueError,'output_root must lie inside input_roots'):
             Profile(self.profile)
+
+    def test_graphics_source_pin_checked_before_launch(self):
+        capture=self.root/'capture.raw';capture.write_bytes(b'synthetic capture')
+        adapter=self.root/'adapter.py';adapter.write_text('synthetic adapter')
+        delegate=self.root/'delegate.py';delegate.write_text('synthetic delegate')
+        expected=pin(delegate);delegate.write_text('changed delegate')
+        cfg=read_json(self.profile)
+        cfg.update(allow_external_tools=True,input_roots=[str(self.root),str(python_executable().parent)],
+                   graphics=dict(adapter=pin(adapter),python=pin(sys.executable),source_pins=[expected]))
+        self.profile.write_text(json.dumps(cfg))
+        with patch('saturn_kit.api.subprocess.run') as launch:
+            with self.assertRaisesRegex(ValueError,'File pin mismatch'):
+                self.call('inspect','changed-delegate',input=str(capture))
+            launch.assert_not_called()
 
     def test_audio_profile_default_through_actual_cli(self):
         kit=Path(__file__).resolve().parents[1]

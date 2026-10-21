@@ -151,6 +151,8 @@ def external_inspect(profile, args, out):
     adapter_path = profile.verified(adapter)
     python_pin = graphics['python']
     python_path = profile.verified(python_pin)
+    for row in graphics.get('source_pins', []):
+        profile.verified(row)
     request = out / 'adapter-request.json'
     forwarded = {key: value for key, value in args.items() if key in {'input', 'kind', 'paired_capture'}}
     if forwarded.get('paired_capture'):

@@ -5,7 +5,9 @@ Saturn register map, original-state reader source and complete small production
 compositor source closure. It lives in `addons/gpl-renderer`. The former
 `addons/gpl-grandia/adapter.py` path is a small forwarding shim; it contains no
 copy of the backend or production sources. Update profile pins when updating
-the kit. No Grandia reconstruction checkout or game build profile is required.
+the kit. Profiles using the shim must also pin `gpl-renderer/adapter.py` in
+`graphics.source_pins`; the core verifies these files before launching it.
+No Grandia reconstruction checkout or game build profile is required.
 
 The MIT core calls `adapter.py --request ABS_JSON --out ABS_FRESH_DIRECTORY`.
 Requests contain `command`, `arguments`, `profile` and optionally `profile_path`.

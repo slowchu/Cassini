@@ -230,13 +230,10 @@
     },
     {
       "path": "addons/gpl-renderer/adapter.py",
-      "bytes": 11887,
-      "sha256": "9c6386082d8baf274c4027de407bed0eecee2ac6f4cdf8d38607ace66d715aa9",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New compatibility launcher for the renamed optional GPL renderer; no renderer code copied",
+      "bytes": 11887,
+      "sha256": "9c6386082d8baf274c4027de407bed0eecee2ac6f4cdf8d38607ace66d715aa9"
     },
     {
       "path": "addons/gpl-renderer/docs/runtime-compatibility.md",
@@ -247,428 +244,248 @@
     },
     {
       "path": "addons/gpl-renderer/examples/reader-receipt.example.json",
-      "bytes": 611,
-      "sha256": "307d56332d299c377274b05dbf39241a55db6f274ab6ae3736ffb2a60bb5923c",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 611,
+      "sha256": "307d56332d299c377274b05dbf39241a55db6f274ab6ae3736ffb2a60bb5923c"
     },
     {
       "path": "addons/gpl-renderer/examples/renderer-receipt.example.json",
-      "bytes": 642,
-      "sha256": "7094925925a4335f37a5b7b2062585ca4462391963a21bba959059057df7ffb6",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 642,
+      "sha256": "7094925925a4335f37a5b7b2062585ca4462391963a21bba959059057df7ffb6"
     },
     {
       "path": "addons/gpl-renderer/LICENSE",
-      "bytes": 35149,
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
     },
     {
       "path": "addons/gpl-renderer/notices/MIT-SATURN-RECOMP.txt",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 1127,
-      "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a",
-      "license": "MIT",
-      "origin": {
-        "donor": "notices/MIT-SATURN-RECOMP.txt",
-        "identity": {
-          "bytes": 1127,
-          "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a"
-        }
-      }
+      "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a"
     },
     {
       "path": "addons/gpl-renderer/notices/MIT-SATURNKIT-RBG0.txt",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 1092,
-      "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853",
-      "license": "MIT",
-      "origin": {
-        "donor": "notices/MIT-SATURNKIT-RBG0.txt",
-        "identity": {
-          "bytes": 1092,
-          "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853"
-        }
-      }
+      "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853"
     },
     {
       "path": "addons/gpl-renderer/notices/PROJECT-LICENSE.md",
-      "bytes": 3303,
-      "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "notices/PROJECT-LICENSE.md",
-        "identity": {
-          "bytes": 3303,
-          "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 3303,
+      "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84"
     },
     {
       "path": "addons/gpl-renderer/notices/SATURN-RECOMP-THIRD-PARTY.md",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 6633,
-      "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586",
-      "license": "MIT",
-      "origin": {
-        "donor": "notices/SATURN-RECOMP-THIRD-PARTY.md",
-        "identity": {
-          "bytes": 6633,
-          "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586"
-        }
-      }
+      "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586"
     },
     {
       "path": "addons/gpl-renderer/production/compositor.cpp",
-      "bytes": 10313,
-      "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "production/compositor.cpp",
-        "identity": {
-          "bytes": 10313,
-          "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 10313,
+      "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc"
     },
     {
       "path": "addons/gpl-renderer/production/reader/named_dump.hpp",
-      "bytes": 23155,
-      "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "reader/named_dump.hpp",
-        "identity": {
-          "bytes": 23155,
-          "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 23155,
+      "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de"
     },
     {
       "path": "addons/gpl-renderer/production/reader/read_state.cpp",
-      "bytes": 4337,
-      "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "reader/read_state.cpp",
-        "identity": {
-          "bytes": 4337,
-          "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 4337,
+      "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 10913,
-      "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/include/saturn/sh2.h",
-        "identity": {
-          "bytes": 10913,
-          "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd"
-        }
-      }
+      "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2_time.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 4091,
-      "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/include/saturn/sh2_time.h",
-        "identity": {
-          "bytes": 4091,
-          "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe"
-        }
-      }
+      "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2_work.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 3026,
-      "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/include/saturn/sh2_work.h",
-        "identity": {
-          "bytes": 3026,
-          "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7"
-        }
-      }
+      "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/machine/saturn.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 15311,
-      "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/machine/saturn.h",
-        "identity": {
-          "bytes": 15311,
-          "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10"
-        }
-      }
+      "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/machine/state.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 2117,
-      "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/machine/state.h",
-        "identity": {
-          "bytes": 2117,
-          "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e"
-        }
-      }
+      "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/mednafen_excc.inc",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 2108,
-      "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0",
-      "license": "GPL-2.0-or-later",
-      "origin": {
-        "donor": "production/runtime/src/video/mednafen_excc.inc",
-        "identity": {
-          "bytes": 2108,
-          "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0"
-        }
-      }
+      "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/png.cpp",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 2625,
-      "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/video/png.cpp",
-        "identity": {
-          "bytes": 2625,
-          "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29"
-        }
-      }
+      "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/saturnkit_rbg0.inc",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 14634,
-      "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c",
-      "license": "MIT",
-      "origin": {
-        "donor": "production/runtime/src/video/saturnkit_rbg0.inc",
-        "identity": {
-          "bytes": 14634,
-          "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c"
-        }
-      }
+      "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/vdp1.cpp",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 33762,
-      "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/video/vdp1.cpp",
-        "identity": {
-          "bytes": 33762,
-          "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63"
-        }
-      }
+      "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/vdp1_raster_gpl.inc",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 16805,
-      "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62",
-      "license": "GPL-2.0-or-later",
-      "origin": {
-        "donor": "production/runtime/src/video/vdp1_raster_gpl.inc",
-        "identity": {
-          "bytes": 16805,
-          "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62"
-        }
-      }
+      "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/vdp2.cpp",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 29486,
-      "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/video/vdp2.cpp",
-        "identity": {
-          "bytes": 29486,
-          "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad"
-        }
-      }
+      "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad"
     },
     {
       "path": "addons/gpl-renderer/production/runtime/src/video/video.h",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 3263,
-      "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0",
-      "license": "MIT AND GPL-3.0-only",
-      "origin": {
-        "donor": "production/runtime/src/video/video.h",
-        "identity": {
-          "bytes": 3263,
-          "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0"
-        }
-      }
+      "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0"
     },
     {
       "path": "addons/gpl-renderer/production/vdp1_bridge.cpp",
-      "bytes": 3082,
-      "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "production/vdp1_bridge.cpp",
-        "identity": {
-          "bytes": 3082,
-          "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 3082,
+      "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79"
     },
     {
       "path": "addons/gpl-renderer/PROVENANCE.json",
-      "bytes": 27164,
-      "sha256": "2068789ec19613f1d42c73b8bbdba0a282397ddd36461ecff9825ef93c46d5d4",
       "license": "GPL-3.0-only",
-      "origin": "This provenance JSON is new GPL-3.0-only metadata; its own hash is recorded by the outer kit manifest, not recursively here."
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 27164,
+      "sha256": "66e617bbbd38c11d2febb74a7a50853c0dac434d1147588916c3bf9ba361e1f6"
     },
     {
       "path": "addons/gpl-renderer/README.md",
-      "bytes": 4886,
-      "sha256": "e2accb52ac28bacde0d39feee3cdbc5f68d0aae6611571bb19322279d37e0ba1",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 5028,
+      "sha256": "b1d7df3bd8cb72da82b2c8d5b6d3d7edae3249ed5f6f2a70a0e47ce71d9976c9"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/__init__.py",
-      "bytes": 157,
-      "sha256": "0bd18d841f165838d52dcbb90346c85e7af5dd92912aed9e7eeb1251146c1477",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 157,
+      "sha256": "0bd18d841f165838d52dcbb90346c85e7af5dd92912aed9e7eeb1251146c1477"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/__main__.py",
-      "bytes": 7719,
-      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "inspector/__main__.py",
-        "identity": {
-          "bytes": 6946,
-          "sha256": "6f5dfb39d686e015d54c21cf81d023e0a87611ea421fdd49085d8ea633ba831a"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 7719,
+      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/build_reader.py",
-      "bytes": 2482,
-      "sha256": "dad370ef4c7fa6bb507cb6f12f5c59aa1979fe720d5d99dd0dc8460344336855",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 2482,
+      "sha256": "dad370ef4c7fa6bb507cb6f12f5c59aa1979fe720d5d99dd0dc8460344336855"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/decode.py",
-      "bytes": 11188,
-      "sha256": "c90f23f637cb22cda7e6559730ae08239d7ad054a5600ae409c04ec448cbbf64",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "inspector/decode.py",
-        "identity": {
-          "bytes": 11494,
-          "sha256": "64b2fd5427918d4fda9d9265d0850e89c8a481c1f926a254f7f0b3a3d5f6ea0a"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 11188,
+      "sha256": "c90f23f637cb22cda7e6559730ae08239d7ad054a5600ae409c04ec448cbbf64"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/hardware.py",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 7747,
-      "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f",
-      "license": "MIT",
-      "origin": {
-        "donor": "hardware.py",
-        "identity": {
-          "bytes": 7747,
-          "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f"
-        }
-      }
+      "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/inputs.py",
-      "bytes": 14897,
-      "sha256": "6266ecfd2e41fec9997d8d919419d543fa0c27f1917d03d908e0977a418205ec",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "inspector/inputs.py",
-        "identity": {
-          "bytes": 15893,
-          "sha256": "182dab57b5717ff62100736b2b1ef3b6d5dec61734922edea16a30b7625457fb"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 14897,
+      "sha256": "6266ecfd2e41fec9997d8d919419d543fa0c27f1917d03d908e0977a418205ec"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/legacy_vdp1.py",
-      "bytes": 4979,
-      "sha256": "59a63d2ce646f952246d2f2ab7db89740547b858906e20ae864882f81bfe74c4",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "home_graphics_compare.py",
-        "identity": {
-          "bytes": 9544,
-          "sha256": "c6fa5f1e33319dcab96ed648bbcdbe04805469ba5f7b627720471f6e8f4439b7"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 4979,
+      "sha256": "59a63d2ce646f952246d2f2ab7db89740547b858906e20ae864882f81bfe74c4"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/offline.py",
-      "bytes": 7956,
-      "sha256": "939fc307181573100aaec3aba1cc96979fa60bce3bc03310e138c2bcd3230fb0",
       "license": "GPL-3.0-only",
-      "origin": {
-        "donor": "inspector/offline.py",
-        "identity": {
-          "bytes": 8929,
-          "sha256": "9c677081a888c0fdc74aad721404995c6bcfae09abc805083c7b3f96325cbf89"
-        }
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 7956,
+      "sha256": "939fc307181573100aaec3aba1cc96979fa60bce3bc03310e138c2bcd3230fb0"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/policy.py",
-      "bytes": 4175,
-      "sha256": "eb40b590164fa52e3774a9bb5902c8cdd56bbc053af2c7738130220b118991ff",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 4175,
+      "sha256": "eb40b590164fa52e3774a9bb5902c8cdd56bbc053af2c7738130220b118991ff"
     },
     {
       "path": "addons/gpl-renderer/tests/test_graphics.py",
-      "bytes": 14177,
-      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec",
       "license": "GPL-3.0-only",
-      "origin": {
-        "kind": "new agent-kit tooling or preserved GPL3 licence text",
-        "date": "2026-10-21"
-      }
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 14177,
+      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec"
     },
     {
       "path": "addons/gpl-saves/adapter.py",
@@ -821,8 +638,8 @@
     },
     {
       "path": "profiles/grandia.example.json",
-      "bytes": 2835,
-      "sha256": "8366ff08d5a8aef3707e9eaf8220983c64cd51a59966df71cf648f034fb79f7a",
+      "bytes": 2986,
+      "sha256": "eded5025e5143395f7404a7260c2abefedbb323589ad8123667fc92018a356fb",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
@@ -877,8 +694,8 @@
     },
     {
       "path": "saturn_kit/api.py",
-      "bytes": 25458,
-      "sha256": "67631f8b0bafa6c9b556cf1d80d72296fd6e7c87696c877a43018752929329e3",
+      "bytes": 25536,
+      "sha256": "3ac41deb8b656430f36d7d70a80710adee85523f456ceba503d0671424b0e12e",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
@@ -947,8 +764,8 @@
     },
     {
       "path": "tests/test_core.py",
-      "bytes": 10695,
-      "sha256": "a0619444072e1b7cb2e5e68b1dfb99819ac9edd4645fef9a330de3d5d0195ddb",
+      "bytes": 11653,
+      "sha256": "303c337df512def9facef44bf2d86fd7ef6b399134b02188718a1aed8c15be58",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },

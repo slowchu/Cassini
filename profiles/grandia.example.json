@@ -23,6 +23,11 @@
     },
     "source_pins": [
       {
+        "path": "/ABS/Cassini/addons/gpl-renderer/adapter.py",
+        "bytes": 0,
+        "sha256": "REPLACE_WITH_LOCAL_SHA256"
+      },
+      {
         "path": "/ABS/Cassini/addons/gpl-renderer/saturn_graphics/__main__.py",
         "bytes": 0,
         "sha256": "REPLACE_WITH_LOCAL_SHA256"
