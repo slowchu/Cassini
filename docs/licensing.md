@@ -12,12 +12,13 @@ Ymir bridge/backup/state utilities retain GPL provenance. Full donor notices
 are supplied. A process boundary does not settle every distribution question:
 preserve corresponding source and compatible grants when redistributing.
 
-Only source is shipped. Existing compiled renderer/reader/converter and
+Source and explicitly synthetic example PNGs are shipped. Existing compiled renderer/reader/converter and
 research-emulator binaries are pinned private dependencies, never copied
 into the kit. Explicit build recipes require existing compilers and external
 Ymir headers where stated. No automatic download or installation occurs.
 
-Fixtures are generated from synthetic test logic. Never add game bytes,
+Fixtures and the README example images are generated from synthetic logic in
+examples/demo.py, with no game inputs. Never add game bytes,
 screenshots/crops, saves, states, BIOS, audio, extracted assets or disc-derived
 generated guest code. Generic generated dump-helper code based on public Ymir
 structure declarations is tool source, separately identified in provenance,

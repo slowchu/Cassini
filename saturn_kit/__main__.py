@@ -1,4 +1,7 @@
 # SPDX-License-Identifier: MIT
+from .startup import check_runtime
+check_runtime()
+
 import argparse
 import json
 import sys

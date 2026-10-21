@@ -223,6 +223,13 @@
     },
     {
       "path": "addons/gpl-grandia/adapter.py",
+      "license": "GPL-3.0-only",
+      "origin": "New compatibility launcher for the renamed optional GPL renderer; no renderer code copied",
+      "bytes": 452,
+      "sha256": "c53d012c8484b6128b691eb969759028742e4c7c7f5528d16c184423c7677873"
+    },
+    {
+      "path": "addons/gpl-renderer/adapter.py",
       "bytes": 11887,
       "sha256": "9c6386082d8baf274c4027de407bed0eecee2ac6f4cdf8d38607ace66d715aa9",
       "license": "GPL-3.0-only",
@@ -232,7 +239,14 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/examples/reader-receipt.example.json",
+      "path": "addons/gpl-renderer/docs/runtime-compatibility.md",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 3806,
+      "sha256": "5c530e9c26834086fa1bf77f91d0a65d720958e78e77af15df3cd95420cec222"
+    },
+    {
+      "path": "addons/gpl-renderer/examples/reader-receipt.example.json",
       "bytes": 611,
       "sha256": "307d56332d299c377274b05dbf39241a55db6f274ab6ae3736ffb2a60bb5923c",
       "license": "GPL-3.0-only",
@@ -242,7 +256,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/examples/renderer-receipt.example.json",
+      "path": "addons/gpl-renderer/examples/renderer-receipt.example.json",
       "bytes": 642,
       "sha256": "7094925925a4335f37a5b7b2062585ca4462391963a21bba959059057df7ffb6",
       "license": "GPL-3.0-only",
@@ -252,7 +266,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/LICENSE",
+      "path": "addons/gpl-renderer/LICENSE",
       "bytes": 35149,
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
       "license": "GPL-3.0-only",
@@ -262,7 +276,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/notices/MIT-SATURN-RECOMP.txt",
+      "path": "addons/gpl-renderer/notices/MIT-SATURN-RECOMP.txt",
       "bytes": 1127,
       "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a",
       "license": "MIT",
@@ -275,7 +289,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/notices/MIT-SATURNKIT-RBG0.txt",
+      "path": "addons/gpl-renderer/notices/MIT-SATURNKIT-RBG0.txt",
       "bytes": 1092,
       "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853",
       "license": "MIT",
@@ -288,7 +302,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/notices/PROJECT-LICENSE.md",
+      "path": "addons/gpl-renderer/notices/PROJECT-LICENSE.md",
       "bytes": 3303,
       "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84",
       "license": "GPL-3.0-only",
@@ -301,7 +315,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/notices/SATURN-RECOMP-THIRD-PARTY.md",
+      "path": "addons/gpl-renderer/notices/SATURN-RECOMP-THIRD-PARTY.md",
       "bytes": 6633,
       "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586",
       "license": "MIT",
@@ -314,7 +328,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/compositor.cpp",
+      "path": "addons/gpl-renderer/production/compositor.cpp",
       "bytes": 10313,
       "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc",
       "license": "GPL-3.0-only",
@@ -327,7 +341,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/reader/named_dump.hpp",
+      "path": "addons/gpl-renderer/production/reader/named_dump.hpp",
       "bytes": 23155,
       "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de",
       "license": "GPL-3.0-only",
@@ -340,7 +354,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/reader/read_state.cpp",
+      "path": "addons/gpl-renderer/production/reader/read_state.cpp",
       "bytes": 4337,
       "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad",
       "license": "GPL-3.0-only",
@@ -353,7 +367,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/include/saturn/sh2.h",
+      "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2.h",
       "bytes": 10913,
       "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd",
       "license": "MIT AND GPL-3.0-only",
@@ -366,7 +380,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/include/saturn/sh2_time.h",
+      "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2_time.h",
       "bytes": 4091,
       "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe",
       "license": "MIT AND GPL-3.0-only",
@@ -379,7 +393,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/include/saturn/sh2_work.h",
+      "path": "addons/gpl-renderer/production/runtime/include/saturn/sh2_work.h",
       "bytes": 3026,
       "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7",
       "license": "MIT AND GPL-3.0-only",
@@ -392,7 +406,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/machine/saturn.h",
+      "path": "addons/gpl-renderer/production/runtime/src/machine/saturn.h",
       "bytes": 15311,
       "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10",
       "license": "MIT AND GPL-3.0-only",
@@ -405,7 +419,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/machine/state.h",
+      "path": "addons/gpl-renderer/production/runtime/src/machine/state.h",
       "bytes": 2117,
       "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e",
       "license": "MIT AND GPL-3.0-only",
@@ -418,7 +432,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/mednafen_excc.inc",
+      "path": "addons/gpl-renderer/production/runtime/src/video/mednafen_excc.inc",
       "bytes": 2108,
       "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0",
       "license": "GPL-2.0-or-later",
@@ -431,7 +445,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/png.cpp",
+      "path": "addons/gpl-renderer/production/runtime/src/video/png.cpp",
       "bytes": 2625,
       "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29",
       "license": "MIT AND GPL-3.0-only",
@@ -444,7 +458,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/saturnkit_rbg0.inc",
+      "path": "addons/gpl-renderer/production/runtime/src/video/saturnkit_rbg0.inc",
       "bytes": 14634,
       "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c",
       "license": "MIT",
@@ -457,7 +471,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/vdp1.cpp",
+      "path": "addons/gpl-renderer/production/runtime/src/video/vdp1.cpp",
       "bytes": 33762,
       "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63",
       "license": "MIT AND GPL-3.0-only",
@@ -470,7 +484,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/vdp1_raster_gpl.inc",
+      "path": "addons/gpl-renderer/production/runtime/src/video/vdp1_raster_gpl.inc",
       "bytes": 16805,
       "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62",
       "license": "GPL-2.0-or-later",
@@ -483,7 +497,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/vdp2.cpp",
+      "path": "addons/gpl-renderer/production/runtime/src/video/vdp2.cpp",
       "bytes": 29486,
       "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad",
       "license": "MIT AND GPL-3.0-only",
@@ -496,7 +510,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/runtime/src/video/video.h",
+      "path": "addons/gpl-renderer/production/runtime/src/video/video.h",
       "bytes": 3263,
       "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0",
       "license": "MIT AND GPL-3.0-only",
@@ -509,7 +523,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/production/vdp1_bridge.cpp",
+      "path": "addons/gpl-renderer/production/vdp1_bridge.cpp",
       "bytes": 3082,
       "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79",
       "license": "GPL-3.0-only",
@@ -522,16 +536,16 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/PROVENANCE.json",
-      "bytes": 17769,
-      "sha256": "9bc618012c239f91c2039889feb8f989306d65b68d0d52ba559065695a508c54",
+      "path": "addons/gpl-renderer/PROVENANCE.json",
+      "bytes": 27164,
+      "sha256": "2068789ec19613f1d42c73b8bbdba0a282397ddd36461ecff9825ef93c46d5d4",
       "license": "GPL-3.0-only",
       "origin": "This provenance JSON is new GPL-3.0-only metadata; its own hash is recorded by the outer kit manifest, not recursively here."
     },
     {
-      "path": "addons/gpl-grandia/README.md",
-      "bytes": 4161,
-      "sha256": "a9544e8a80afd17f6a87b95e38bdcfc43ed9a67c0192a757b7924044cca79b13",
+      "path": "addons/gpl-renderer/README.md",
+      "bytes": 4886,
+      "sha256": "e2accb52ac28bacde0d39feee3cdbc5f68d0aae6611571bb19322279d37e0ba1",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
@@ -539,7 +553,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/__init__.py",
+      "path": "addons/gpl-renderer/saturn_graphics/__init__.py",
       "bytes": 157,
       "sha256": "0bd18d841f165838d52dcbb90346c85e7af5dd92912aed9e7eeb1251146c1477",
       "license": "GPL-3.0-only",
@@ -549,9 +563,9 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/__main__.py",
-      "bytes": 7582,
-      "sha256": "c2b6bedbe8c56232266afadfffe762c2938ce55a51c01d222a820f377a91cde3",
+      "path": "addons/gpl-renderer/saturn_graphics/__main__.py",
+      "bytes": 7719,
+      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521",
       "license": "GPL-3.0-only",
       "origin": {
         "donor": "inspector/__main__.py",
@@ -562,7 +576,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/build_reader.py",
+      "path": "addons/gpl-renderer/saturn_graphics/build_reader.py",
       "bytes": 2482,
       "sha256": "dad370ef4c7fa6bb507cb6f12f5c59aa1979fe720d5d99dd0dc8460344336855",
       "license": "GPL-3.0-only",
@@ -572,7 +586,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/decode.py",
+      "path": "addons/gpl-renderer/saturn_graphics/decode.py",
       "bytes": 11188,
       "sha256": "c90f23f637cb22cda7e6559730ae08239d7ad054a5600ae409c04ec448cbbf64",
       "license": "GPL-3.0-only",
@@ -585,7 +599,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/hardware.py",
+      "path": "addons/gpl-renderer/saturn_graphics/hardware.py",
       "bytes": 7747,
       "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f",
       "license": "MIT",
@@ -598,7 +612,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/inputs.py",
+      "path": "addons/gpl-renderer/saturn_graphics/inputs.py",
       "bytes": 14897,
       "sha256": "6266ecfd2e41fec9997d8d919419d543fa0c27f1917d03d908e0977a418205ec",
       "license": "GPL-3.0-only",
@@ -611,7 +625,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/legacy_vdp1.py",
+      "path": "addons/gpl-renderer/saturn_graphics/legacy_vdp1.py",
       "bytes": 4979,
       "sha256": "59a63d2ce646f952246d2f2ab7db89740547b858906e20ae864882f81bfe74c4",
       "license": "GPL-3.0-only",
@@ -624,9 +638,9 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/offline.py",
-      "bytes": 7416,
-      "sha256": "a17a9947a2adb982d412e9458cabbf6114172db4d6f6771ec1b919c1bb4759a5",
+      "path": "addons/gpl-renderer/saturn_graphics/offline.py",
+      "bytes": 7956,
+      "sha256": "939fc307181573100aaec3aba1cc96979fa60bce3bc03310e138c2bcd3230fb0",
       "license": "GPL-3.0-only",
       "origin": {
         "donor": "inspector/offline.py",
@@ -637,7 +651,7 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/saturn_graphics/policy.py",
+      "path": "addons/gpl-renderer/saturn_graphics/policy.py",
       "bytes": 4175,
       "sha256": "eb40b590164fa52e3774a9bb5902c8cdd56bbc053af2c7738130220b118991ff",
       "license": "GPL-3.0-only",
@@ -647,9 +661,9 @@
       }
     },
     {
-      "path": "addons/gpl-grandia/tests/test_graphics.py",
-      "bytes": 9324,
-      "sha256": "da83180ce570ffb06dff66a1208edc501a7f13404285430b8b94d5ebedf48e56",
+      "path": "addons/gpl-renderer/tests/test_graphics.py",
+      "bytes": 14177,
+      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
@@ -712,6 +726,13 @@
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
+      "path": "cassini.py",
+      "bytes": 200,
+      "sha256": "5529277cc077e576121006cad9ecb573f5e593d663dea352e2eb2b24bf265720",
+      "license": "MIT",
+      "origin": "New Cassini branded alias of the original MIT CLI launcher"
+    },
+    {
       "path": "check_provenance.py",
       "bytes": 1856,
       "sha256": "506d199c287e0514ef584d1777f54ace67122003e8044abeb28a76b598c7dce1",
@@ -727,24 +748,55 @@
     },
     {
       "path": "docs/formats.md",
-      "bytes": 5119,
-      "sha256": "1e8060af7b81a120b014be119c05cdc1de99684d72e5e8259ead81069c7e4ff5",
+      "bytes": 6118,
+      "sha256": "01752e3b41f510362f888cb58773b83d1f887fb9f9c2a20dc59d74f22f822411",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
       "path": "docs/inventory.md",
-      "bytes": 3349,
-      "sha256": "1b2080c6146187d2028c8091c5596f69c2942cd16a3236703695e64754a4d5e8",
+      "bytes": 3355,
+      "sha256": "224b995a7d974f399480387cb0c1cba4df1c13d90e75bbb0b6c6fb573b6a73b6",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
       "path": "docs/licensing.md",
-      "bytes": 1721,
-      "sha256": "2227464956b48d83933ee2a95c0320382994c22b97e792c2f481546b2cdbf865",
+      "bytes": 1821,
+      "sha256": "39bf5a0830f6ccee87e07696fc5a7030c9ff731078759cdf29e5a9009aa4c15d",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
+    },
+    {
+      "path": "examples/after.png",
+      "license": "MIT",
+      "origin": "Synthetic geometric example generated exclusively by examples/demo.py; no game inputs",
+      "generated_by": "examples/demo.py",
+      "bytes": 484,
+      "sha256": "5c8eeafab086cf1f61df95fe44744fac37c85ee78ca17e577b8233b0e17bd142"
+    },
+    {
+      "path": "examples/before.png",
+      "license": "MIT",
+      "origin": "Synthetic geometric example generated exclusively by examples/demo.py; no game inputs",
+      "generated_by": "examples/demo.py",
+      "bytes": 488,
+      "sha256": "b414bc1cb124231d250cd4630907271cf31a5508b9e42ddae94ef4e30f88c225"
+    },
+    {
+      "path": "examples/demo.py",
+      "license": "MIT",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 7235,
+      "sha256": "ab45db3747ae3a3a0a49b5f386795475c55f4f74348d5dfa001c62fa2ab3a469"
+    },
+    {
+      "path": "examples/diff.png",
+      "license": "MIT",
+      "origin": "Synthetic geometric example generated exclusively by examples/demo.py; no game inputs",
+      "generated_by": "examples/demo.py",
+      "bytes": 254,
+      "sha256": "fd9789d724d5c71f5b2cd7d2fe2520fe35ff56b284267903942a204d407816c1"
     },
     {
       "path": "LICENSE",
@@ -769,8 +821,8 @@
     },
     {
       "path": "profiles/grandia.example.json",
-      "bytes": 2831,
-      "sha256": "3dbd76c6d7408ffcceaea865575cd6e72c538eb071276cfa6cbd76628bb35c91",
+      "bytes": 2835,
+      "sha256": "8366ff08d5a8aef3707e9eaf8220983c64cd51a59966df71cf648f034fb79f7a",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
@@ -782,9 +834,16 @@
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
+      "path": "provenance.json",
+      "bytes": null,
+      "sha256": null,
+      "license": "MIT",
+      "origin": "Generated per-file provenance manifest (self not hash-pinned)"
+    },
+    {
       "path": "README.md",
-      "bytes": 5141,
-      "sha256": "d026fa67630ce33ecc56e709c0570686348126e0d048114d24f557daedee16cc",
+      "bytes": 6040,
+      "sha256": "ce7acad44be47588493863980b136e6466f027acf159a03ecba522458bc2b769",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
@@ -811,24 +870,31 @@
     },
     {
       "path": "saturn_kit/__main__.py",
-      "bytes": 2437,
-      "sha256": "5c3140bd65e1a330961bc9c1bfdaf8172c29ec3ba63ab074a215074e6386c5fe",
+      "bytes": 2489,
+      "sha256": "742bf4116194ebb02247becf5dc6ef0e55ed71f7b1800470954aca717a9ee4e9",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
       "path": "saturn_kit/api.py",
-      "bytes": 24369,
-      "sha256": "ede087aab870a9544858660a4a7b43441d02543683c558953ab82da5aa87f185",
+      "bytes": 25458,
+      "sha256": "67631f8b0bafa6c9b556cf1d80d72296fd6e7c87696c877a43018752929329e3",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
       "path": "saturn_kit/mcp_server.py",
-      "bytes": 12302,
-      "sha256": "51c724f5a7252baf201e10d5f7ed2929bba40ef10ce43124bd6a9368b0dbb6a3",
+      "bytes": 12357,
+      "sha256": "a030ebb0f41aec45130d8a3101831754c019079edec44bfd8721ca98393c44b3",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
+    },
+    {
+      "path": "saturn_kit/startup.py",
+      "license": "MIT",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 546,
+      "sha256": "3e28b4c6f2cabac2e2ab8bdda85e3f7315a32edf30429f754c9ce50dcfbcd548"
     },
     {
       "path": "skills/saturn-debug-derived/SKILL.md",
@@ -874,15 +940,15 @@
     },
     {
       "path": "tests/test_control.py",
-      "bytes": 15421,
-      "sha256": "12ed38e123b7f71e700708bf112fa09abc302215bd26cb789adc9a2dcaacec27",
+      "bytes": 15444,
+      "sha256": "f5a1cbf35af661214b04b160bfb14a876f187a3dad5c1dfa5672ea88bc1456d4",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
       "path": "tests/test_core.py",
-      "bytes": 10677,
-      "sha256": "3f526030aa3759d3251a1f45cbe2d2c9a71878f0fd0b7404ff7576d67fd25f40",
+      "bytes": 10695,
+      "sha256": "a0619444072e1b7cb2e5e68b1dfb99819ac9edd4645fef9a330de3d5d0195ddb",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
@@ -895,26 +961,17 @@
     },
     {
       "path": "tests/test_save_transport.py",
-      "bytes": 2921,
-      "sha256": "d9f04d3f46ce9f7948b4ea10b1532921a6f899234b2d1c53cbd4e5d30b60f278",
+      "bytes": 2939,
+      "sha256": "1515b296cf7f32712ec4f3bac668f6656d2259675aede7d3cb36cbe8c878c990",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
     {
-      "path": "provenance.json",
-      "bytes": null,
-      "sha256": null,
+      "path": "tests/test_startup.py",
       "license": "MIT",
-      "origin": "Generated per-file provenance manifest (self not hash-pinned)"
-    },
-    {
-      "path": "cassini.py",
-      "bytes": 200,
-      "sha256": "5529277cc077e576121006cad9ecb573f5e593d663dea352e2eb2b24bf265720",
-      "license": "MIT",
-      "origin": "New Cassini branded alias of the original MIT CLI launcher"
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 3066,
+      "sha256": "5f51a793509582d3d324c004bba29450bf55b43b08a1b7856aa0fb4e05402b48"
     }
-  ],
-  "game_data_included": false,
-  "external_backend_source_bundled": true
+  ]
 }

@@ -6,7 +6,7 @@ import struct
 import sys
 import tempfile
 import unittest
-from saturn_kit.api import pin, read_json, run, write_json
+from saturn_kit.api import pin, python_executable, read_json, run, write_json
 
 
 class SaveTransportTests(unittest.TestCase):
@@ -15,7 +15,7 @@ class SaveTransportTests(unittest.TestCase):
         self.root = Path(self.temp.name).resolve(); self.out = self.root/'outputs'; self.profile = self.root/'profile.json'
         kit = Path(__file__).resolve().parents[1]
         write_json(self.profile, dict(schema='saturn-kit-profile-v1', game='synthetic',
-            input_roots=[str(self.root), str(kit), str(Path(sys.executable).parent)], output_root=str(self.out),
+            input_roots=[str(self.root), str(kit), str(python_executable().parent)], output_root=str(self.out),
             allow_external_tools=True, saves=dict(adapter=pin(kit/'addons/gpl-saves/adapter.py'),python=pin(sys.executable))))
 
     def call(self, name, **args):

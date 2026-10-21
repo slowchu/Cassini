@@ -5,8 +5,10 @@ from pathlib import Path
 import hashlib
 import json
 import math
+import os
 import re
 import subprocess
+import sys
 import wave
 
 SCHEMA = 'saturn-kit-inspection-v1'
@@ -37,8 +39,32 @@ def write_json(path, value):
         stream.write('\n')
 
 
+def _windows_executable():
+    import ctypes
+    function = ctypes.WinDLL('kernel32', use_last_error=True).GetModuleFileNameW
+    function.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p, ctypes.c_uint]
+    function.restype = ctypes.c_uint
+    buffer = ctypes.create_unicode_buffer(32768)
+    length = function(None, buffer, len(buffer))
+    if not length or length >= len(buffer):
+        raise ctypes.WinError(ctypes.get_last_error())
+    return Path(buffer.value)
+
+
+def python_executable():
+    """Return the running interpreter's hashable executable, including Store Python."""
+    try:
+        return Path(sys.executable).resolve(strict=True)
+    except OSError as error:
+        if sys.platform != 'win32' or getattr(error, 'winerror', None) != 1920:
+            raise
+        # A Store app execution alias is launchable but cannot be opened as a file.
+        return _windows_executable().resolve(strict=True)
+
+
 def pin(path):
-    p = Path(path).resolve(strict=True)
+    same_python = os.path.normcase(os.path.abspath(path)) == os.path.normcase(os.path.abspath(sys.executable))
+    p = python_executable() if same_python else Path(path).resolve(strict=True)
     digest = hashlib.sha256()
     with p.open('rb') as stream:
         for block in iter(lambda: stream.read(1024 * 1024), b''):

@@ -2,9 +2,10 @@
 
 This add-on contains the qualified Python inspector, its retained VDP1 decoder,
 Saturn register map, original-state reader source and complete small production
-compositor source closure. The directory name is retained for profile
-compatibility. The Grandia reconstruction checkout, path map and frozen
-English/Japanese build profiles are no longer execution dependencies.
+compositor source closure. It lives in `addons/gpl-renderer`. The former
+`addons/gpl-grandia/adapter.py` path is a small forwarding shim; it contains no
+copy of the backend or production sources. Update profile pins when updating
+the kit. No Grandia reconstruction checkout or game build profile is required.
 
 The MIT core calls `adapter.py --request ABS_JSON --out ABS_FRESH_DIRECTORY`.
 Requests contain `command`, `arguments`, `profile` and optionally `profile_path`.
@@ -42,11 +43,19 @@ Building is optional and explicit. Inspection never builds or installs:
 
 ```text
 python -B -m saturn_graphics --profile ABS_PROFILE build-harness --compiler ABS_EXISTING_CLANG_OR_GXX --out ABS_FRESH_BUILD
+python -B -m saturn_graphics --profile ABS_PROFILE build-harness --runtime ABS_COMPATIBLE_RUNTIME --compiler ABS_EXISTING_CLANG_OR_GXX --out ABS_FRESH_BUILD
 python -B -m saturn_graphics --profile ABS_PROFILE build-reader --compiler ABS_EXISTING_CLANG_OR_GXX --include ABS_YMIR_CORE_INCLUDE --include ABS_YMIR_SDL_SRC --include ABS_COMPATIBLE_HEADER_LIBRARY_INCLUDE --include ABS_XXHASH_INCLUDE --out ABS_FRESH_READER_BUILD
 ```
 
-The renderer uses the bundled 14-file non-system closure, C++20 and
-`SATURN_VDP1_GPL=1`; no Saturn core/guest is constructed. The reader additionally
+The default renderer uses the bundled 14-file non-system closure. `--runtime`
+selects a caller's compatible saturn-recomp runtime directory while retaining
+the two bundled compositor seams. The builder pins the 14 expected source
+files before compilation, records the actual compiler dependency closure and
+rejects any added or missing dependency. It uses C++20 and
+`SATURN_VDP1_GPL=1`; no Saturn core/guest is constructed. See
+[the exact runtime contract](docs/runtime-compatibility.md) before selecting an
+external runtime; this is a private production API, not an arbitrary-emulator
+interface. The reader additionally
 needs compatible public Ymir archive13 savestate/serializer headers and fmt,
 cereal, nlohmann/json and xxHash headers. Repeat `--include` for each explicit
 header root. Those public headers and an existing C++ compiler remain external;

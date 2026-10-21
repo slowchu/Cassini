@@ -28,16 +28,21 @@ def dependency_paths(path):
     return [Path(p).resolve() for p in rows]
 
 
-def build(output, compiler):
-    """Explicit optional compile of the bundled production source; never invoked by inspect."""
-    directory = fresh_output(output)
+def build(output, compiler, runtime=None):
+    """Explicit compile of a compatible production runtime; never invoked by inspect."""
     compiler = Path(compiler).resolve()
-    source = PACKAGE / "runtime"
+    source = Path(runtime).resolve() if runtime is not None else PACKAGE / "runtime"
+    if not source.is_dir():
+        raise ValueError("A compatible runtime directory is required")
     sources = [PACKAGE / "vdp1_bridge.cpp", PACKAGE / "compositor.cpp", source / "src/video/png.cpp"]
     dependencies = [source / name for name in RENDERER_FILES] + sources[:2]
     identities = [pin(p) for p in dependencies]
+    compiler_identity = pin(compiler)
+    directory = fresh_output(output)
     receipt = {"schema": "saturn-kit-offline-renderer-v1", "passed": False, "commands": [],
-               "compiler": pin(compiler), "library_directory": str(compiler.parent), "source_files": identities}
+               "compiler": compiler_identity, "library_directory": str(compiler.parent), "source_files": identities,
+               "runtime_selection": "external" if runtime is not None else "bundled", "runtime_root": str(source),
+               "expected_dependency_files": identities}
     try:
         include = [source / "include", *[source / "src" / name for name in ("video", "machine", "host", "sound")]]
         env = os.environ.copy()
@@ -63,8 +68,10 @@ def build(output, compiler):
             raise ValueError("Explicit offline link failed; preserved log")
         actual = {path for dep in directory.glob("*.d") for path in dependency_paths(dep)}
         expected = {path.resolve() for path in dependencies}
+        receipt["actual_dependency_paths"] = [str(path) for path in sorted(actual)]
+        receipt["actual_dependency_files"] = [pin(path) for path in sorted(actual)]
         if actual != expected:
-            raise ValueError("Compiler dependency closure differs from the bundled source closure")
+            raise ValueError("Compiler dependency closure differs from the selected source closure")
         for row in identities:
             verify(row)
         receipt.update(passed=True, executable=pin(exe), dependency_files=[pin(path) for path in sorted(directory.glob("*.d"))])

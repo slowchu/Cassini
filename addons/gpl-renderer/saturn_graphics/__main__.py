@@ -58,6 +58,7 @@ def main():
     sub = parser.add_subparsers(dest="job", required=True)
     b = sub.add_parser("build-harness", help="explicit offline compile only; never automatic")
     b.add_argument("--out", required=True, type=Path); b.add_argument("--compiler", required=True, type=Path)
+    b.add_argument("--runtime", type=Path, help="compatible saturn-recomp runtime root; default: bundled frozen renderer")
     b = sub.add_parser("build-reader", help="explicit reader compile against compatible public Ymir/header dependencies")
     b.add_argument("--out", required=True, type=Path); b.add_argument("--compiler", required=True, type=Path)
     b.add_argument("--include", required=True, action="append", type=Path)
@@ -74,7 +75,7 @@ def main():
     args = parser.parse_args()
     configure(args.profile)
     if args.job == "build-harness":
-        print(build(args.out, args.compiler)); return 0
+        print(build(args.out, args.compiler, args.runtime)); return 0
     if args.job == "build-reader":
         from .build_reader import build as build_reader
         print(build_reader(args.out, args.compiler, args.include)); return 0

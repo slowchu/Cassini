@@ -6,6 +6,18 @@ unknown versions fail rather than being interpreted as a compatible dump.
 Addresses and decoded register values are integers in JSON. A pin is
 `{"path":"relative-or-absolute", "bytes":123, "sha256":"64 hex digits"}`.
 Referenced inputs must remain inside the selected profile's allowed roots.
+For the current Python executable, generate its pin from the package root:
+
+```text
+python -B -c "import json,sys; from saturn_kit.api import pin; print(json.dumps(pin(sys.executable)))"
+```
+
+On Windows Store Python this hashes the executable Windows actually loaded,
+because the app execution alias cannot be opened as a normal file. Use the
+returned path in the profile and include its parent in input_roots. File pins
+and data-path containment checks remain mandatory. This addresses the
+[Store alias behavior documented by CPython](https://github.com/python/cpython/issues/104336).
+
 The profile output_root must lie inside input_roots; validation fails at
 startup otherwise. This admits generated reports/images for later comparisons.
 Audio threshold precedence is explicit argument, then the optional audio
@@ -90,6 +102,14 @@ supply_metadata. Counter alignment requires generated PCM identity. Its
 analysis report is `saturn-kit-audio-delivery-analysis-v1`; scoring validity,
 generated quiet, playback quiet and delivery evidence are separate fields.
 See the audio add-on for CSV/time units and uncertainty rules.
+
+## Name compatibility
+
+Cassini 0.2.1 keeps `saturn_kit`, the version-1 `saturn-kit-*` schemas and
+`saturn-*` skill names. `cassini.py` is the preferred launcher; `saturn-kit.py`
+remains an alias. A future naming migration must accept existing formats and
+provide a deprecation period before removing these entry points. Renaming a
+schema field without changing its meaning would needlessly break saved reports.
 
 Explicit saves `to: native|ymir` uses the optional save adapter. Outputs and
 the retained BUP envelope are pinned in saves-v1; unsupported opaque metadata

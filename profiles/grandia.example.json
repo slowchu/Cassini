@@ -12,7 +12,7 @@
   "graphics": {
     "backend": "bundled-gpl-v1",
     "adapter": {
-      "path": "/ABS/Cassini/addons/gpl-grandia/adapter.py",
+      "path": "/ABS/Cassini/addons/gpl-renderer/adapter.py",
       "bytes": 0,
       "sha256": "REPLACE_WITH_LOCAL_SHA256"
     },
@@ -23,7 +23,7 @@
     },
     "source_pins": [
       {
-        "path": "/ABS/Cassini/addons/gpl-grandia/saturn_graphics/__main__.py",
+        "path": "/ABS/Cassini/addons/gpl-renderer/saturn_graphics/__main__.py",
         "bytes": 0,
         "sha256": "REPLACE_WITH_LOCAL_SHA256"
       }
@@ -85,3 +85,4 @@
     "Raw media, captures, saves, states and generated audio remain outside this kit."
   ]
 }
+

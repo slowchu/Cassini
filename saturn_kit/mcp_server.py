@@ -3,6 +3,9 @@
 
 from __future__ import annotations
 
+from .startup import check_runtime
+check_runtime()
+
 import contextlib
 import copy
 import json

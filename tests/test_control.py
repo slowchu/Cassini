@@ -9,6 +9,7 @@ import sys
 import tempfile
 import time
 import unittest
+from saturn_kit.api import python_executable
 
 ADDON = Path(__file__).resolve().parents[1] / "addons/gpl-control"
 
@@ -87,10 +88,10 @@ class ControlTests(unittest.TestCase):
         self.script.write_text("MODE='ok'\n" + FIXTURE)
         self.template = self.root / "Ymir.toml.in"
         self.template.write_text("[System]\nInternalBackupRAMImagePath = '{save}'\nInternalBackupRAMPerGame = false\n[General.PathOverrides]\n")
-        self.native = {"player": control.pin(Path(sys.executable).resolve()), "arguments": [str(self.script)],
+        self.native = {"player": control.pin(python_executable()), "arguments": [str(self.script)],
             "files": [control.pin(self.script)], "save": control.pin(self.seed), "disposable_seed": True,
             "capture_frames": [2], "timeout_seconds": 5}
-        self.original = {"player": control.pin(Path(sys.executable).resolve()), "arguments": [str(self.script),
+        self.original = {"player": control.pin(python_executable()), "arguments": [str(self.script),
             "--profile", "{profile}", "--automation", "{session}", "--paused"], "launch_files": [control.pin(self.script)],
             "files": [{"pin": control.pin(self.template), "target": "Ymir.toml", "template": True}],
             "save": {"pin": control.pin(self.seed), "target": "bup-int.bin", "disposable_seed": True},

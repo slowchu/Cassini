@@ -12,7 +12,23 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/adapter.py",
+      "prior_identity": {
+        "bytes": 11887,
+        "sha256": "9c6386082d8baf274c4027de407bed0eecee2ac6f4cdf8d38607ace66d715aa9"
+      }
+    },
+    {
+      "path": "docs/runtime-compatibility.md",
+      "bytes": 3806,
+      "sha256": "5c530e9c26834086fa1bf77f91d0a65d720958e78e77af15df3cd95420cec222",
+      "license": "GPL-3.0-only",
+      "origin": {
+        "kind": "new Cassini renderer documentation/report",
+        "date": "2026-10-21"
+      },
+      "modification": "New packaging or API-contract documentation; no game values."
     },
     {
       "path": "examples/reader-receipt.example.json",
@@ -23,7 +39,12 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/examples/reader-receipt.example.json",
+      "prior_identity": {
+        "bytes": 611,
+        "sha256": "307d56332d299c377274b05dbf39241a55db6f274ab6ae3736ffb2a60bb5923c"
+      }
     },
     {
       "path": "examples/renderer-receipt.example.json",
@@ -34,7 +55,12 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/examples/renderer-receipt.example.json",
+      "prior_identity": {
+        "bytes": 642,
+        "sha256": "7094925925a4335f37a5b7b2062585ca4462391963a21bba959059057df7ffb6"
+      }
     },
     {
       "path": "LICENSE",
@@ -45,7 +71,12 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/LICENSE",
+      "prior_identity": {
+        "bytes": 35149,
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      }
     },
     {
       "path": "notices/MIT-SATURN-RECOMP.txt",
@@ -59,7 +90,12 @@
           "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/notices/MIT-SATURN-RECOMP.txt",
+      "prior_identity": {
+        "bytes": 1127,
+        "sha256": "20f1e425fdc43998a56853d780523461e688fe617fd7b80ccc37f1cc13017c8a"
+      }
     },
     {
       "path": "notices/MIT-SATURNKIT-RBG0.txt",
@@ -73,7 +109,12 @@
           "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/notices/MIT-SATURNKIT-RBG0.txt",
+      "prior_identity": {
+        "bytes": 1092,
+        "sha256": "4a6cce5130202480dc3833a1cc62b42d0c0c42f806427cdb216f774254cc1853"
+      }
     },
     {
       "path": "notices/PROJECT-LICENSE.md",
@@ -87,7 +128,12 @@
           "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/notices/PROJECT-LICENSE.md",
+      "prior_identity": {
+        "bytes": 3303,
+        "sha256": "3b38b697890f907af05289a542213643f9e6336e5cb2b9a53537276d17567c84"
+      }
     },
     {
       "path": "notices/SATURN-RECOMP-THIRD-PARTY.md",
@@ -101,7 +147,12 @@
           "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/notices/SATURN-RECOMP-THIRD-PARTY.md",
+      "prior_identity": {
+        "bytes": 6633,
+        "sha256": "1ba2a51fd2903ece73cd9a10ea2f9b3eb415c7f5f7a6894edaafc47a23a08586"
+      }
     },
     {
       "path": "production/compositor.cpp",
@@ -115,7 +166,12 @@
           "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/compositor.cpp",
+      "prior_identity": {
+        "bytes": 10313,
+        "sha256": "992cf59526be1931da604e26fcfcb5af0cc023598005e2dd92c8bdaa3ddde4fc"
+      }
     },
     {
       "path": "production/reader/named_dump.hpp",
@@ -129,7 +185,12 @@
           "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de"
         }
       },
-      "modification": "none; generic Ymir declaration/state serializer helper, no game data"
+      "modification": "none; generic Ymir declaration/state serializer helper, no game data",
+      "prior_kit_path": "addons/gpl-grandia/production/reader/named_dump.hpp",
+      "prior_identity": {
+        "bytes": 23155,
+        "sha256": "aa07ec77c52070525ec1f0553cb539cc028e1354f23ee13e930784ebd3cbf4de"
+      }
     },
     {
       "path": "production/reader/read_state.cpp",
@@ -143,7 +204,12 @@
           "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad"
         }
       },
-      "modification": "none; generic Ymir declaration/state serializer helper, no game data"
+      "modification": "none; generic Ymir declaration/state serializer helper, no game data",
+      "prior_kit_path": "addons/gpl-grandia/production/reader/read_state.cpp",
+      "prior_identity": {
+        "bytes": 4337,
+        "sha256": "b2026a4dc6aeefbaf638cabbf13077ab7ff8f1d24194d495824611ded4aec9ad"
+      }
     },
     {
       "path": "production/runtime/include/saturn/sh2.h",
@@ -157,7 +223,12 @@
           "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/include/saturn/sh2.h",
+      "prior_identity": {
+        "bytes": 10913,
+        "sha256": "65b55b2b4a8885db7d294f7ddbf8870ea6f9d6c8f5cd693f7c44afd6e72c70dd"
+      }
     },
     {
       "path": "production/runtime/include/saturn/sh2_time.h",
@@ -171,7 +242,12 @@
           "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/include/saturn/sh2_time.h",
+      "prior_identity": {
+        "bytes": 4091,
+        "sha256": "6ca86249f7cb79c4fa73405c46f41e82b15fd98b04fda2c4085e7e3c6afa36fe"
+      }
     },
     {
       "path": "production/runtime/include/saturn/sh2_work.h",
@@ -185,7 +261,12 @@
           "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/include/saturn/sh2_work.h",
+      "prior_identity": {
+        "bytes": 3026,
+        "sha256": "b91f45d14a34009758ce5896def84bd9ddfa0c0829171d45f13add70eb8054c7"
+      }
     },
     {
       "path": "production/runtime/src/machine/saturn.h",
@@ -199,7 +280,12 @@
           "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/machine/saturn.h",
+      "prior_identity": {
+        "bytes": 15311,
+        "sha256": "04066602bff9cd59f5a6a88fc4ede29ed527e5002e982ff1fcbdd8622b2e0f10"
+      }
     },
     {
       "path": "production/runtime/src/machine/state.h",
@@ -213,7 +299,12 @@
           "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/machine/state.h",
+      "prior_identity": {
+        "bytes": 2117,
+        "sha256": "3d63a7ab71c90878c357f2b5e658da11f5a44ff448173420f458500e3ce4455e"
+      }
     },
     {
       "path": "production/runtime/src/video/mednafen_excc.inc",
@@ -227,7 +318,12 @@
           "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/mednafen_excc.inc",
+      "prior_identity": {
+        "bytes": 2108,
+        "sha256": "cf9aaec3072b0562c9fb68800c8f29bdedc98b14db420f78b0102dd7fb2bbba0"
+      }
     },
     {
       "path": "production/runtime/src/video/png.cpp",
@@ -241,7 +337,12 @@
           "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/png.cpp",
+      "prior_identity": {
+        "bytes": 2625,
+        "sha256": "416576b0324d54683ad2a1e201d7f16ca1e36e626989adf2ca62eeb20ac5ef29"
+      }
     },
     {
       "path": "production/runtime/src/video/saturnkit_rbg0.inc",
@@ -255,7 +356,12 @@
           "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/saturnkit_rbg0.inc",
+      "prior_identity": {
+        "bytes": 14634,
+        "sha256": "487d6dce9864243c30e7db0b77fd0d5415e696864dfcfbef0a67e9336833a38c"
+      }
     },
     {
       "path": "production/runtime/src/video/vdp1.cpp",
@@ -269,7 +375,12 @@
           "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/vdp1.cpp",
+      "prior_identity": {
+        "bytes": 33762,
+        "sha256": "a2f093ce6e9d86fa40a102da09ab9367f14f0fa7fdc3088143254f30167c7a63"
+      }
     },
     {
       "path": "production/runtime/src/video/vdp1_raster_gpl.inc",
@@ -283,7 +394,12 @@
           "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/vdp1_raster_gpl.inc",
+      "prior_identity": {
+        "bytes": 16805,
+        "sha256": "436a7a3add8623acbcc4be147dda28897e900c51f597f05eed3244fbd91acb62"
+      }
     },
     {
       "path": "production/runtime/src/video/vdp2.cpp",
@@ -297,7 +413,12 @@
           "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/vdp2.cpp",
+      "prior_identity": {
+        "bytes": 29486,
+        "sha256": "f2d958f00537eb2903fc0345bb91eaddce2aa053bf6329af7e7a4522f0f059ad"
+      }
     },
     {
       "path": "production/runtime/src/video/video.h",
@@ -311,7 +432,12 @@
           "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/runtime/src/video/video.h",
+      "prior_identity": {
+        "bytes": 3263,
+        "sha256": "5bf39c7f46a1180a51f426b832bf6f0bb83bc9742002f3ad1b892acaf54c59c0"
+      }
     },
     {
       "path": "production/vdp1_bridge.cpp",
@@ -325,18 +451,28 @@
           "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/production/vdp1_bridge.cpp",
+      "prior_identity": {
+        "bytes": 3082,
+        "sha256": "9da0ae91fece07dadd6a255efd077f9a34a1c02b49847a27635cdbc2b6b1ba79"
+      }
     },
     {
       "path": "README.md",
-      "bytes": 4161,
-      "sha256": "a9544e8a80afd17f6a87b95e38bdcfc43ed9a67c0192a757b7924044cca79b13",
+      "bytes": 4886,
+      "sha256": "e2accb52ac28bacde0d39feee3cdbc5f68d0aae6611571bb19322279d37e0ba1",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Updated generic directory naming, runtime-selection command and compatible-API documentation link.",
+      "prior_kit_path": "addons/gpl-grandia/README.md",
+      "prior_identity": {
+        "bytes": 4161,
+        "sha256": "a9544e8a80afd17f6a87b95e38bdcfc43ed9a67c0192a757b7924044cca79b13"
+      }
     },
     {
       "path": "saturn_graphics/__init__.py",
@@ -347,12 +483,17 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/__init__.py",
+      "prior_identity": {
+        "bytes": 157,
+        "sha256": "0bd18d841f165838d52dcbb90346c85e7af5dd92912aed9e7eeb1251146c1477"
+      }
     },
     {
       "path": "saturn_graphics/__main__.py",
-      "bytes": 7582,
-      "sha256": "c2b6bedbe8c56232266afadfffe762c2938ce55a51c01d222a820f377a91cde3",
+      "bytes": 7719,
+      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521",
       "license": "GPL-3.0-only",
       "origin": {
         "donor": "inspector/__main__.py",
@@ -361,7 +502,12 @@
           "sha256": "6f5dfb39d686e015d54c21cf81d023e0a87611ea421fdd49085d8ea633ba831a"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately."
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately. Cassini polish: Added build-harness --runtime argument and forwarding.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/__main__.py",
+      "prior_identity": {
+        "bytes": 7582,
+        "sha256": "c2b6bedbe8c56232266afadfffe762c2938ce55a51c01d222a820f377a91cde3"
+      }
     },
     {
       "path": "saturn_graphics/build_reader.py",
@@ -372,7 +518,12 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/build_reader.py",
+      "prior_identity": {
+        "bytes": 2482,
+        "sha256": "dad370ef4c7fa6bb507cb6f12f5c59aa1979fe720d5d99dd0dc8460344336855"
+      }
     },
     {
       "path": "saturn_graphics/decode.py",
@@ -386,7 +537,12 @@
           "sha256": "64b2fd5427918d4fda9d9265d0850e89c8a481c1f926a254f7f0b3a3d5f6ea0a"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately."
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/decode.py",
+      "prior_identity": {
+        "bytes": 11188,
+        "sha256": "c90f23f637cb22cda7e6559730ae08239d7ad054a5600ae409c04ec448cbbf64"
+      }
     },
     {
       "path": "saturn_graphics/hardware.py",
@@ -400,7 +556,12 @@
           "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f"
         }
       },
-      "modification": "none at extraction"
+      "modification": "none at extraction",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/hardware.py",
+      "prior_identity": {
+        "bytes": 7747,
+        "sha256": "c3eb2a951b209c73da8fda150bd7c31ff375215df067511a5686a6467398a61f"
+      }
     },
     {
       "path": "saturn_graphics/inputs.py",
@@ -414,7 +575,12 @@
           "sha256": "182dab57b5717ff62100736b2b1ef3b6d5dec61734922edea16a30b7625457fb"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately."
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/inputs.py",
+      "prior_identity": {
+        "bytes": 14897,
+        "sha256": "6266ecfd2e41fec9997d8d919419d543fa0c27f1917d03d908e0977a418205ec"
+      }
     },
     {
       "path": "saturn_graphics/legacy_vdp1.py",
@@ -428,12 +594,17 @@
           "sha256": "c6fa5f1e33319dcab96ed648bbcdbe04805469ba5f7b627720471f6e8f4439b7"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately."
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/legacy_vdp1.py",
+      "prior_identity": {
+        "bytes": 4979,
+        "sha256": "59a63d2ce646f952246d2f2ab7db89740547b858906e20ae864882f81bfe74c4"
+      }
     },
     {
       "path": "saturn_graphics/offline.py",
-      "bytes": 7416,
-      "sha256": "a17a9947a2adb982d412e9458cabbf6114172db4d6f6771ec1b919c1bb4759a5",
+      "bytes": 7956,
+      "sha256": "939fc307181573100aaec3aba1cc96979fa60bce3bc03310e138c2bcd3230fb0",
       "license": "GPL-3.0-only",
       "origin": {
         "donor": "inspector/offline.py",
@@ -442,7 +613,12 @@
           "sha256": "9c677081a888c0fdc74aad721404995c6bcfae09abc805083c7b3f96325cbf89"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately."
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately. Cassini polish: Added explicit caller-runtime selection and pinned expected/actual compiler-closure receipts; renderer and pixel algorithms unchanged.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/offline.py",
+      "prior_identity": {
+        "bytes": 7416,
+        "sha256": "a17a9947a2adb982d412e9458cabbf6114172db4d6f6771ec1b919c1bb4759a5"
+      }
     },
     {
       "path": "saturn_graphics/policy.py",
@@ -453,18 +629,28 @@
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values.",
+      "prior_kit_path": "addons/gpl-grandia/saturn_graphics/policy.py",
+      "prior_identity": {
+        "bytes": 4175,
+        "sha256": "eb40b590164fa52e3774a9bb5902c8cdd56bbc053af2c7738130220b118991ff"
+      }
     },
     {
       "path": "tests/test_graphics.py",
-      "bytes": 9324,
-      "sha256": "da83180ce570ffb06dff66a1208edc501a7f13404285430b8b94d5ebedf48e56",
+      "bytes": 14177,
+      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values."
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Added synthetic/mock external-runtime, rejection, closure, CLI and old-shim cases.",
+      "prior_kit_path": "addons/gpl-grandia/tests/test_graphics.py",
+      "prior_identity": {
+        "bytes": 9324,
+        "sha256": "da83180ce570ffb06dff66a1208edc501a7f13404285430b8b94d5ebedf48e56"
+      }
     }
   ],
   "self_notice": "This provenance JSON is new GPL-3.0-only metadata; its own hash is recorded by the outer kit manifest, not recursively here.",
@@ -472,5 +658,21 @@
     "inspector": "Grandia maintained inspector; exact donor file hashes retained before policy adaptation.",
     "runtime": "Qualified general saturn-recomp runtime closure; original MIT and Mednafen GPL2+ notices retained.",
     "reader": "Qualified generic Ymir serializer helper; named_dump.hpp generated from public structure declarations only, no captured/game values."
+  },
+  "packaging_revision": {
+    "date": "2026-10-21",
+    "previous_directory": "addons/gpl-grandia",
+    "directory": "addons/gpl-renderer",
+    "previous_manifest": {
+      "bytes": 17769,
+      "sha256": "9bc618012c239f91c2039889feb8f989306d65b68d0d52ba559065695a508c54"
+    }
+  },
+  "compatibility_shim": {
+    "path": "addons/gpl-grandia/adapter.py",
+    "bytes": 452,
+    "sha256": "c53d012c8484b6128b691eb969759028742e4c7c7f5528d16c184423c7677873",
+    "license": "GPL-3.0-only",
+    "purpose": "Forward only; no production-source duplicate. Updating kit still requires refreshed profile pins."
   }
 }

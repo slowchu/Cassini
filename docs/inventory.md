@@ -1,12 +1,12 @@
 # Tool inventory and extraction status
 
-Version0.2, checked against Grandia's retained tools on2026-10-21. All
+Version 0.2.1, checked against Grandia's retained tools on2026-10-21. All
 generalisable source below is extracted; external compiled utilities and
 game-specific inputs remain explicit dependencies. No game data is bundled.
 
 | Capability | Extracted destination | Retained dependency / qualification limit |
 | --- | --- | --- |
-| Graphics inspector | addons/gpl-grandia: command/register/layer decoders, original/native readers, production compositor closure and generic state-reader source | Pinned renderer/reader utilities; explicit build recipes. Original archive13 and paired capture required. Other game/serializer versions need qualification. |
+| Graphics inspector | addons/gpl-renderer: command/register/layer decoders, original/native readers, production compositor closure and generic state-reader source | Pinned renderer/reader utilities; explicit build recipes. Original archive13 and paired capture required. Other game/serializer versions need qualification. |
 | Ymir research bridge | addons/gpl-control/ymir_bridge_client.py, exact existing client | Compatible research emulator with exact build identity; stock Ymir unsupported. |
 | Fast replay/capture | addons/gpl-control/adapter.py | Pinned native player/media, recording, disposable seed, finite bounds and route/profile parameters. Synthetic flow/cleanup and one 600-frame Grandia run pass. |
 | Original controller/capture | same control adapter, controller-only recipe | New profile/backup copy and matching research bridge. Debug derivation is explicit; export is allowed, import/RAM writes refused. |
@@ -35,3 +35,4 @@ No game/runtime/translator changes, automatic builds/installs, expectation
 updates, active-save writes or third-party uploads are performed by analysis.
 Acquisition is opt-in and separately qualified; offline retained-data checks
 do not silently qualify live use.
+

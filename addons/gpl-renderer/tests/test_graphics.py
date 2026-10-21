@@ -10,6 +10,9 @@ import unittest
 from unittest.mock import patch
 import shlex
 import subprocess
+import contextlib
+import io
+import runpy
 
 ADDON = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ADDON))
@@ -127,6 +130,85 @@ class ExtractedGraphicsTests(unittest.TestCase):
         self.assertEqual(len(calls), 4)
         self.assertEqual(value["schema"], "saturn-kit-offline-renderer-v1")
         self.assertEqual(len(value["source_files"]), 14)
+        self.assertEqual(value["runtime_selection"], "bundled")
+        self.assertEqual(value["expected_dependency_files"], value["source_files"])
+        self.assertEqual(len(value["actual_dependency_files"]), 14)
+
+    def synthetic_runtime(self):
+        runtime = self.source / "compatible-runtime"
+        for name in offline.RENDERER_FILES:
+            target = runtime / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("// synthetic runtime source: " + name)
+        return runtime
+
+    def mocked_compiler(self, closure):
+        def fake(argv, **kwargs):
+            Path(argv[argv.index("-o") + 1]).write_bytes(b"mock-build-output")
+            if "-MF" in argv:
+                Path(argv[argv.index("-MF") + 1]).write_text("o: " + " ".join(shlex.quote(path.as_posix()) for path in closure))
+            return subprocess.CompletedProcess(argv, 0, stdout=b"mock", stderr=b"")
+        return fake
+
+    def test_external_runtime_source_pins_mocked(self):
+        runtime = self.synthetic_runtime()
+        compiler = self.base / "synthetic-compiler"
+        compiler.write_bytes(b"not-executable")
+        closure = [runtime / name for name in offline.RENDERER_FILES] + [ADDON / "production/vdp1_bridge.cpp", ADDON / "production/compositor.cpp"]
+        with patch.object(offline.subprocess, "run", self.mocked_compiler(closure)):
+            receipt = offline.build(self.output / "external", compiler, runtime / ".." / runtime.name)
+        value = policy.read_json(receipt)
+        self.assertTrue(value["passed"])
+        self.assertEqual(value["runtime_selection"], "external")
+        self.assertEqual(value["runtime_root"], str(runtime.resolve()))
+        self.assertEqual({row["path"] for row in value["source_files"]}, {str(path.resolve()) for path in closure})
+        self.assertEqual({row["sha256"] for row in value["expected_dependency_files"]}, {policy.pin(path)["sha256"] for path in closure})
+        self.assertEqual(len(value["actual_dependency_files"]), 14)
+
+    def test_runtime_closure_mismatch_is_preserved(self):
+        runtime = self.synthetic_runtime()
+        compiler = self.base / "synthetic-compiler"
+        compiler.write_bytes(b"not-executable")
+        extra = runtime / "unexpected.hpp"
+        extra.write_text("// synthetic unexpected compiler dependency")
+        closure = [runtime / name for name in offline.RENDERER_FILES] + [ADDON / "production/vdp1_bridge.cpp", ADDON / "production/compositor.cpp", extra]
+        with patch.object(offline.subprocess, "run", self.mocked_compiler(closure)):
+            with self.assertRaisesRegex(ValueError, "closure differs"):
+                offline.build(self.output / "mismatch", compiler, runtime)
+        value = policy.read_json(self.output / "mismatch/build.json")
+        self.assertFalse(value["passed"])
+        self.assertEqual(len(value["expected_dependency_files"]), 14)
+        self.assertEqual(len(value["actual_dependency_files"]), 15)
+        self.assertNotIn("executable", value)
+
+    def test_missing_runtime_rejected_before_output(self):
+        with self.assertRaisesRegex(ValueError, "compatible runtime"):
+            offline.build(self.output / "missing", self.base / "unused-compiler", self.source / "missing")
+        self.assertFalse((self.output / "missing").exists())
+
+    def test_incomplete_runtime_rejected_before_output(self):
+        with self.assertRaises(FileNotFoundError):
+            offline.build(self.output / "incomplete", self.base / "unused-compiler", self.source)
+        self.assertFalse((self.output / "incomplete").exists())
+
+    def test_build_harness_cli_runtime_forwarded(self):
+        from saturn_graphics import __main__ as cli
+        runtime = self.source / "selected-runtime"
+        compiler = self.base / "selected-compiler"
+        destination = self.output / "selected-build"
+        argv = ["saturn_graphics", "--profile", str(self.profile), "build-harness", "--runtime", str(runtime),
+                "--compiler", str(compiler), "--out", str(destination)]
+        with patch.object(sys, "argv", argv), patch.object(cli, "build", return_value=destination / "build.json") as build:
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(cli.main(), 0)
+        build.assert_called_once_with(destination, compiler, runtime)
+
+    def test_old_adapter_shim_forwarded(self):
+        shim = ADDON.parent / "gpl-grandia/adapter.py"
+        with patch.object(runpy, "run_path") as run:
+            exec(compile(shim.read_text(encoding="utf-8"), str(shim), "exec"), {"__name__": "__main__", "__file__": str(shim)})
+        run.assert_called_once_with(str(ADDON / "adapter.py"), run_name="__main__")
+        self.assertEqual({path.name for path in shim.parent.iterdir()}, {"adapter.py"})
 
     def test_explicit_reader_builder_mocked(self):
         compiler = self.base / "synthetic-compiler"

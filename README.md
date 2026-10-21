@@ -1,84 +1,122 @@
 <!-- SPDX-License-Identifier: MIT -->
 # Cassini
 
-A reusable Saturn recomp agent kit, named after the Cassini space probe.
+Cassini is a debugging toolkit for Sega Saturn emulators and recompiled games.
+It turns graphics captures, images and hardware logs into local reports that
+developers and coding agents can inspect and compare.
 
-Python CLI, typed stdio MCP server and five workflows for Saturn recomp
-investigations. Version0.2.1 packages the existing graphics inspector, Ymir bridge
-client, finite replay/capture controller, save transport and audio delivery
-analysis into optional source add-ons. Running them needs no Grandia
-reconstruction checkout. Grandia is the first validated profile; another
-game's real integration remains unqualified.
+Use it to connect a changed graphics command or layer setting to a pixel
+difference, find which hardware features a route exercises, or keep a native
+versus original investigation reproducible. Emulator developers can export the
+[neutral capture format](docs/formats.md) and use the same comparison tools.
+Game profiles supply paths, identities and adapters for other input formats;
+Grandia is the first validated profile.
 
-The MIT core handles neutral JSON/PNG inspection, structured/pixel diffs and
-hardware/guest reports. GPL add-ons retain existing qualified algorithms and
-production renderer sources, communicating through process/JSON boundaries.
-Binaries, game data and private profiles are not shipped.
+## Try it without a game
 
-Use Python3.11+ and an existing Pillow installation. Optional audio analysis
-also needs existing NumPy. Nothing automatically installs packages, enables
-plugins, configures clients or builds utilities.
+Use Python 3.11+ with Pillow already available. From this folder, run:
 
 ```text
-python -B C:/Cassini/cassini.py --help
-python -B C:/Cassini/cassini.py inspect --profile PROFILE --input CAPTURE --out FRESH
-python -B C:/Cassini/cassini.py diff --profile PROFILE --before INSPECTION_A --after INSPECTION_B --out FRESH
-python -B C:/Cassini/cassini.py hw-report --profile PROFILE --inputs CLOSED_HW_LOG CLOSED_GUEST_LOG --out FRESH
-python -B C:/Cassini/cassini.py replay --profile PROFILE --recording RECORDING --frames 600 --out FRESH
-python -B C:/Cassini/cassini.py capture-original --profile PROFILE --recipe RECIPE_JSON --out FRESH
-python -B C:/Cassini/cassini.py saves --profile PROFILE --input BUP_FILE --to native --out FRESH
-python -B C:/Cassini/cassini.py audio-gaps --profile PROFILE --input PLAYBACK_WAV --reference GENERATED_WAV --delivery DELIVERY_JSON --out FRESH
-python -B C:/Cassini/cassini.py mcp --profile PROFILE
+python -B examples/demo.py --out ../cassini-demo
 ```
 
-Replay/capture default to plans. Explicit `--execute` runs the pinned control
-adapter with finite frame/wall bounds and disposable save/profile copies.
-Never configure an active save as its seed. The controller owns and closes
-its child processes and refuses RAM writes/state import. One native and one
-original Grandia 600-frame run passed through the delivered MCP server, with
-capture/export and process closure. This verifies the bounded mechanism;
-longer routes and other games require their own checks.
+This creates two synthetic captures, inspects them, compares their fields and
+pixels, and summarizes a synthetic hardware log. Everything goes into a new
+folder outside the kit. Nothing is downloaded, installed, built or launched
+except Python analysis commands. Choose a fresh output name for another run.
 
-`PROFILE` is trusted local JSON with `schema: saturn-kit-profile-v1`, a
-`game` identity, allowed `input_roots`, and an `output_root`. Relative
-paths resolve against its directory. Every result is a new child below the
-output root; existing folders are refused. Declare output_root inside an
-input_roots entry so generated reports/images can be read for later comparisons;
-profiles that omit this are refused at startup. Keep filled profiles, raw dumps,
-media, saves, recordings and outputs outside this package.
+| Before | After | Pixel difference |
+| --- | --- | --- |
+| ![Synthetic rectangle before movement](examples/before.png) | ![Synthetic rectangle after movement](examples/after.png) | ![Synthetic whole-image pixel difference](examples/diff.png) |
 
-The profile supplies exact source/executable pins and permissions.
-`allow_external_tools: true` explicitly enables those local tools; captures
-cannot supply commands. MCP retains its launch-selected profile in memory and
-refuses file changes or a different per-call profile. Restart deliberately to
-change its game or permissions.
+The example reports:
 
-See [profiles](profiles/grandia.example.json), [inventory](docs/inventory.md),
-[formats](docs/formats.md), [architecture](docs/architecture.md),
-[licensing](docs/licensing.md) and each add-on README for its contract.
-Offline rendering uses a pinned production harness; original states need a
-compatible pinned reader and paired capture. Explicit build recipes are
-provided; external Ymir sources remain necessary for its utilities.
+```text
+State: /vdp1/commands/0/x changed from 32 to 48
+Image: 1024 different pixels; no missing or added pixels
+Hardware log: 2 counter keys; no CPU-time inference
+```
 
-This directory is also a Claude Code plugin (`--plugin-dir C:/Cassini`).
-Its `.mcp.json` requires an existing Python and the private
-`CASSINI_PROFILE` environment variable. Existing plugin configurations using
-`SATURN_KIT_PROFILE` must rename that variable to `CASSINI_PROFILE`; the old
-variable is no longer read. Update existing MCP client launch paths/server
-keys to Cassini and restart the client. `AGENTS.md` gives equivalent
-recipes for other agents. No global configuration is edited.
+These are hand-generated shapes and declared example fields. The demo does
+**not** run the production renderer, emulate Saturn drawing, or establish a
+real game's correctness. Open `demo-summary.json` and the JSON/PNG reports in
+the output folder to see the actual results.
 
-Run `python -B -m unittest discover -s tests -v` from the package. Shipped
-fixtures are generated synthetically. Actual Grandia captures/results stay
-private. Diffs cover whole images and represented fields; they do not prove
-matched gameplay. Save transport does not infer progress or validate game
-checksums. Quiet audio alone does not prove a delivery fault.
+## Use your own captures
 
-`python -B check_provenance.py` verifies every shipped file against
-`provenance.json`, including licences and donor identities. Check exact
-grants and corresponding-source obligations before redistributing add-ons.
+The CLI and typed stdio MCP server share these operations:
 
-Cassini keeps the existing `saturn_kit` Python module, `saturn-kit-*` data
-schemas and `saturn-*` skill names for compatibility. `saturn-kit.py` remains
-an alias for `cassini.py`. Copyright and third-party notices retain their
-original names. Filled profiles must reference the current folder and pins.
+| Command | Purpose |
+| --- | --- |
+| `inspect` | Inspect neutral captures, or use a configured graphics decoder/production renderer. |
+| `diff` | List changed, added and missing fields and compare every image pixel. |
+| `hw-report` | Summarize closed hardware/guest logs without treating counts as CPU time. |
+| `replay` | Plan a bounded native replay; execution requires explicit opt-in. |
+| `capture-original` | Plan original-emulator capture through the research bridge; execution requires explicit opt-in. |
+| `saves` | Inspect metadata or explicitly transport supported saves into fresh output. |
+| `audio-gaps` | Inspect PCM silence, or compare generated/delivery evidence with the audio add-on. |
+
+The demo creates a working profile. Make another inspection with:
+
+```text
+python -B cassini.py inspect --profile ../cassini-demo/profile.json --input inputs/before.json --out results/another-inspection
+python -B cassini.py --help
+```
+
+Operation paths resolve against the profile's directory. A profile declares
+the game, allowed input roots and an output root inside them; each run needs a
+new child output directory. Filled profiles, captures and results belong
+outside this kit. See the inert [game profile example](profiles/grandia.example.json)
+and [format reference](docs/formats.md) when connecting a real producer.
+
+The MIT core reads represented state and verifies referenced files; it does
+not guess a decoder for an arbitrary emulator state. The optional
+[renderer add-on](addons/gpl-renderer/README.md) supplies the existing graphics
+inspector and production compositor. Original states also need a compatible
+reader and paired capture. Use the explicit build recipes and existing
+dependencies; nothing builds automatically. Optional audio analysis also needs
+NumPy already available.
+
+## Connect an agent
+
+Configure an MCP client to launch the server with absolute paths:
+
+```text
+python -B /path/to/Cassini/cassini.py mcp --profile /path/to/private/profile.json
+```
+
+The server keeps its selected profile and refuses changes during the session.
+Restart deliberately to change its game or permissions. This folder is also a
+Claude Code plugin: load it explicitly with `--plugin-dir` pointing here. Its
+`.mcp.json` uses an existing Python runtime and the private `CASSINI_PROFILE`
+environment variable. [AGENTS.md](AGENTS.md) provides the same workflows for
+Codex and other agents. No global client configuration is edited.
+
+## Evidence and permissions
+
+Analysis preserves inputs and writes fresh reports. Diffs cover whole images
+and represented fields; matching names or scenes do not prove equivalent
+gameplay. DRAW, physical DISPLAY and static reconstruction remain distinct.
+Save transport does not infer progress or validate game checksums, and silence
+alone does not prove an audio delivery fault.
+
+Replay and original capture default to plans. `--execute` runs only the
+profile-pinned controller with finite frame/wall bounds and disposable save or
+emulator-profile copies. Use a closed copy as the seed. The controller owns its
+children, refuses arbitrary RAM writes/state import, and does not take over an
+already running player. Another game's integration needs its own checks.
+
+The core and new workflows are MIT; optional GPL add-ons preserve their donor
+licences. Game data, BIOS, real saves/captures and compiled player/emulator
+binaries are not shipped. See [licensing](docs/licensing.md),
+[inventory](docs/inventory.md) and [architecture](docs/architecture.md).
+
+Run `python -B -m unittest discover -s tests -v` for synthetic tests and
+`python -B check_provenance.py` for shipped per-file identities and licences.
+Review corresponding-source obligations before redistributing GPL components.
+
+Existing integrations keep the `saturn_kit` module, `saturn-kit-*` schemas,
+`saturn-*` skill names and `saturn-kit.py` launcher alias for compatibility.
+Client launch paths/server names use Cassini; old plugin configurations must
+rename `SATURN_KIT_PROFILE` to `CASSINI_PROFILE` and restart. Filled source and
+executable pins must match the local installation.

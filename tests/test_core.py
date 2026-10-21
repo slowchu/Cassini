@@ -9,7 +9,7 @@ import wave
 import subprocess
 import sys
 from PIL import Image
-from saturn_kit.api import Profile, differences, pin, read_json, run, write_json
+from saturn_kit.api import Profile, differences, pin, python_executable, read_json, run, write_json
 
 
 class CoreTests(unittest.TestCase):
@@ -166,7 +166,7 @@ class CoreTests(unittest.TestCase):
     def test_audio_profile_default_through_actual_cli(self):
         kit=Path(__file__).resolve().parents[1]
         cfg=read_json(self.profile);cfg.update(allow_external_tools=True,
-            input_roots=[str(self.root),str(kit),str(Path(sys.executable).parent)],
+            input_roots=[str(self.root),str(kit),str(python_executable().parent)],
             audio=dict(adapter=pin(kit/'addons/gpl-audio/adapter.py'),python=pin(sys.executable),
                        rate=1000,channels=1,minimum_run_ms=5))
         self.profile.write_text(json.dumps(cfg));p=self.root/'quiet.wav'
