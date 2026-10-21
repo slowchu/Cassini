@@ -1,5 +1,12 @@
 # Offline audio delivery add-on
 
+Use this add-on to investigate pauses or stuttering in recorded audio. It
+finds quiet sections and, when you provide both the generated audio and
+playback timing logs, helps distinguish silence in the source from a gap in
+delivery. Quiet audio alone cannot establish a playback fault. The main
+analysis works on existing files; optional Windows tools can collect new
+recordings. Use it when you need more detail than the core silence check.
+
 This GPL-3.0-only add-on extracts the qualified Grandia audio arithmetic into
 a game-independent process adapter. It imports no Grandia checkout, launcher,
 live process observer or game data. Its optional NumPy dependency must already

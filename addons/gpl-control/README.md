@@ -1,5 +1,12 @@
 # Optional live control add-on
 
+Use this add-on when you want to repeat a recorded route in a native player
+or collect captures from a compatible research build of Ymir. It starts a
+separate test process with copies of your save and emulator settings, runs a
+limited sequence of inputs, then closes it. It produces a plan by default;
+running the plan requires explicit permission through --execute. You do not
+need this add-on to inspect files you already captured.
+
 This GPL-3.0-only add-on runs without a Grandia checkout. It includes the
 qualified filesystem bridge client as an exact source copy and a new finite
 controller. Python 3.11 or later is required. Pillow is needed only to export

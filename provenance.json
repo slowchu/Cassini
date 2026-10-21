@@ -85,15 +85,15 @@
     },
     {
       "path": "addons/gpl-audio/provenance.json",
-      "bytes": 5258,
-      "sha256": "e92ebd7685c97d92624540e3bedeb817120e53d98bc2e8abfa9dd6bdc114a504",
+      "bytes": 5510,
+      "sha256": "10ee2aea1b9590913d87bd2301c69740a95dc322a02683d2f3e6111898395d25",
       "license": "MIT",
       "origin": "new metadata"
     },
     {
       "path": "addons/gpl-audio/README.md",
-      "bytes": 8394,
-      "sha256": "7569e4b189d3d665d66130c6f3727f1bee2586d3697d800b3a7ddae67f2c4854",
+      "bytes": 8836,
+      "sha256": "04209f48d783dc0daa40113b07b0d36d7ede3f7a1836ee4faa3fe4e3ba2502be",
       "license": "MIT",
       "origin": "new"
     },
@@ -206,8 +206,8 @@
     },
     {
       "path": "addons/gpl-control/README.md",
-      "bytes": 6294,
-      "sha256": "b40b928b4a3f1c1b920663daacba03bbd77e6fbd56e9d512221cee668af4ea16",
+      "bytes": 6729,
+      "sha256": "da1404738b676ea00660ed2083186da9af9fc5777e5354f468d5d1b84e934fb7",
       "license": "GPL-3.0-only",
       "origin": "New add-on interface and boundary documentation"
     },
@@ -408,14 +408,14 @@
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
       "bytes": 27164,
-      "sha256": "66e617bbbd38c11d2febb74a7a50853c0dac434d1147588916c3bf9ba361e1f6"
+      "sha256": "80e16d33548e7da1664719ecd7d396bbc550101c03711b406f26d066d853692c"
     },
     {
       "path": "addons/gpl-renderer/README.md",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 5028,
-      "sha256": "b1d7df3bd8cb72da82b2c8d5b6d3d7edae3249ed5f6f2a70a0e47ce71d9976c9"
+      "bytes": 5465,
+      "sha256": "8ffc3d57f7d654c61850204d4d61dd4a294c9746697dbb656a35738bb8bd495d"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/__init__.py",
@@ -530,8 +530,8 @@
     },
     {
       "path": "addons/gpl-saves/README.md",
-      "bytes": 1561,
-      "sha256": "1bf5a7d957257d48e9b79f473f5291cb18eeafda92224f78ab047960e68a60f8",
+      "bytes": 1972,
+      "sha256": "643c0f43eaf7173d3d78d07337f29e2bc6c4d9ac314f345eeebe4f7223d33975",
       "license": "MIT",
       "origin": "New original interface documentation"
     },

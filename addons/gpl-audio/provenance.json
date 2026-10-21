@@ -47,7 +47,9 @@
     {
       "path": "addons/gpl-audio/README.md",
       "license": "MIT",
-      "origin": "new"
+      "origin": "new",
+      "bytes": 8836,
+      "sha256": "04209f48d783dc0daa40113b07b0d36d7ede3f7a1836ee4faa3fe4e3ba2502be"
     },
     {
       "path": "addons/gpl-audio/requirements.txt",

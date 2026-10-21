@@ -1,5 +1,12 @@
 # Optional GPL Saturn graphics tools
 
+Use this add-on to investigate a graphics problem in a saved Saturn capture.
+It shows the drawing commands and video settings, renders separate layers,
+and compares the results so you can see where an image changed. You need it
+for supported native dumps or Ymir states; comparing already-exported neutral
+captures and PNGs works with the core tools. Rendering needs a compatible
+runtime, and Ymir states also need a compatible reader.
+
 This add-on contains the qualified Python inspector, its retained VDP1 decoder,
 Saturn register map, original-state reader source and complete small production
 compositor source closure. It lives in `addons/gpl-renderer`. The former

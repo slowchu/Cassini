@@ -460,8 +460,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5028,
-      "sha256": "b1d7df3bd8cb72da82b2c8d5b6d3d7edae3249ed5f6f2a70a0e47ce71d9976c9",
+      "bytes": 5465,
+      "sha256": "8ffc3d57f7d654c61850204d4d61dd4a294c9746697dbb656a35738bb8bd495d",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",

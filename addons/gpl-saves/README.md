@@ -1,5 +1,12 @@
 # Optional save transport (GPL-3.0-only)
 
+Use this add-on to copy supported Saturn save entries between BUP, native
+player and Ymir formats, for example when testing the same progress in two
+players. It writes new files and leaves the originals alone. Ymir output
+requires a separately built converter. It does not check whether a save is
+valid for a particular game or repair its progress; keep your normal saves
+backed up and use copies for testing.
+
 `saves` reads BUP/native file-entry metadata. Explicit `--to native` writes a fresh native copy; `--to ymir` also imports that copy through the unchanged qualified Ymir backup API converter. Inputs remain unchanged. No game-specific checksum or progress claim is made.
 
 Configure `profile.saves` with pinned `adapter`, `python`, and optionally `converter` files. Set `allow_external_tools: true`. The converter is an explicit external tool, never installed or built automatically.
