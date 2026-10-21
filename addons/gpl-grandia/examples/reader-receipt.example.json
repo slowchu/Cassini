@@ -1,0 +1,14 @@
+{
+  "schema": "saturn-kit-original-reader-v1",
+  "passed": true,
+  "archive_version_required": 13,
+  "executable": {"path": "./reader/read_state", "bytes": 0, "sha256": "REPLACE_WITH_LOCAL_SHA256"},
+  "library_directory": "./reader",
+  "library_files": [],
+  "source_files": [],
+  "provenance": {
+    "kind": "explicit-build-or-reviewed-compatibility-receipt",
+    "donor_receipt": {"bytes": 0, "sha256": "REPLACE_WITH_ORIGINAL_QUALIFIED_RECEIPT_HASH"},
+    "scope": "Compatible Ymir portable-binary archive13. Actual deserialization, byte-identical roundtrip and paired-capture checks remain mandatory."
+  }
+}

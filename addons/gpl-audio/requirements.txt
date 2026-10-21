@@ -1,0 +1,2 @@
+# Optional add-on dependency; no install is performed by the kit.
+numpy>=1.24

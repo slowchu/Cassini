@@ -1,0 +1,87 @@
+{
+  "schema": "saturn-kit-profile-v1",
+  "game": "grandia",
+  "description": "Inert example. Replace all paths/pins; keep filled profiles and data private. Control has its own complete profile example in addons/gpl-control.",
+  "input_roots": [
+    "/ABS/PRIVATE/grandia",
+    "/ABS/Cassini",
+    "/ABS/EXISTING/python-directory"
+  ],
+  "output_root": "/ABS/PRIVATE/grandia/outputs/cassini",
+  "allow_external_tools": false,
+  "graphics": {
+    "backend": "bundled-gpl-v1",
+    "adapter": {
+      "path": "/ABS/Cassini/addons/gpl-grandia/adapter.py",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "python": {
+      "path": "/ABS/EXISTING/python-directory/python",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "source_pins": [
+      {
+        "path": "/ABS/Cassini/addons/gpl-grandia/saturn_graphics/__main__.py",
+        "bytes": 0,
+        "sha256": "REPLACE_WITH_LOCAL_SHA256"
+      }
+    ],
+    "harness": {
+      "path": "/ABS/PRIVATE/grandia/renderer-receipt.json",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "reader_build": {
+      "path": "/ABS/PRIVATE/grandia/reader-receipt.json",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "timeout_seconds": 120
+  },
+  "saves": {
+    "adapter": {
+      "path": "/ABS/Cassini/addons/gpl-saves/adapter.py",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "python": {
+      "path": "/ABS/EXISTING/python-directory/python",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "converter": {
+      "path": "/ABS/PRIVATE/grandia/tools/native-to-ymir",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    }
+  },
+  "audio": {
+    "adapter": {
+      "path": "/ABS/Cassini/addons/gpl-audio/adapter.py",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "python": {
+      "path": "/ABS/EXISTING/python-directory/python",
+      "bytes": 0,
+      "sha256": "REPLACE_WITH_LOCAL_SHA256"
+    },
+    "rate": 44100,
+    "channels": 2,
+    "thresholds_s16": [
+      2,
+      16
+    ],
+    "minimum_run_ms": 5,
+    "secondary_minimum_run_ms": 20
+  },
+  "limitations": [
+    "Pin the complete selected Python/source closure, not only the single entry-point placeholder.",
+    "Graphics uses bundled sources with pinned utility receipts; no reconstruction checkout setting remains.",
+    "Original states require the compatible archive13 reader and paired capture. Diffs do not prove matched gameplay.",
+    "Control example contains inert paths/pins; live execution always requires explicit execute=true and disposable profiles.",
+    "Raw media, captures, saves, states and generated audio remain outside this kit."
+  ]
+}

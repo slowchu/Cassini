@@ -1,0 +1,20 @@
+{
+  "schema": "saturn-kit-file-provenance-v1",
+  "license": "GPL-3.0-only",
+  "files": [
+    {
+      "file": "ymir_bridge_client.py",
+      "origin": "Grandia reconstruction/tools/ymir_bridge_client.py, qualified diagnostic research client",
+      "modification": "Exact byte copy; no path generalization was needed",
+      "source_bytes": 12591,
+      "source_sha256": "66a1b03b9db5231d67b61ba17c020728076fbc2002504dea160ceeafef37f070",
+      "license": "GPL-3.0-only",
+      "basis": "Conservative inherited project GPL classification; original source has no separate file grant"
+    },
+    {"file": "adapter.py", "origin": "New controller implementation for the Saturn recomp agent kit", "license": "GPL-3.0-only"},
+    {"file": "README.md", "origin": "New add-on interface and boundary documentation", "license": "GPL-3.0-only"},
+    {"file": "provenance.json", "origin": "New provenance metadata", "license": "GPL-3.0-only"},
+    {"file": "profile.example.json", "origin": "New inert profile template with placeholder identities and no private/game data", "license": "GPL-3.0-only"},
+    {"file": "LICENSE", "origin": "GNU GPL version 3 text copied unchanged from the existing optional add-on", "license": "GPL-3.0-only"}
+  ]
+}

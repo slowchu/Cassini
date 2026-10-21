@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cassini": {
+      "command": "python",
+      "args": [
+        "-B",
+        "${CLAUDE_PLUGIN_ROOT}/cassini.py",
+        "mcp",
+        "--profile",
+        "${CASSINI_PROFILE}"
+      ]
+    }
+  }
+}

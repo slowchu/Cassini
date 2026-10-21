@@ -1,0 +1,24 @@
+Cassini
+
+New core, synthetic tests and newly written workflow documentation are offered
+under the adjacent MIT LICENSE. External projects retain their own licences.
+The per-file provenance manifest defines the shipped licence boundary; a root
+MIT file does not relicense optional add-ons or their dependencies.
+
+Optional add-ons bundle extracted qualified graphics/production rendering,
+research bridge/control, save transport and audio analysis source. None is
+relicensed into the MIT core. Their exact component grants, donor identities
+and explicit build dependencies appear in each add-on and provenance.json.
+No compiled utility is included.
+
+Grandia reconstruction: GPL-3.0-only combined project, as recorded in its
+NATIVE-LICENSE.md. Ymir: GPL-3.0-only. Mednafen-derived VDP1 rasterizer:
+GPL-2.0-or-later, used under GPL version 3 by the Grandia combined program.
+The saturn-recomp toolkit is MIT with separately licensed components listed
+in its THIRD_PARTY.md, including the optional GPL rasterizer. The retained
+SaturnKit RBG0 component is MIT, Copyright (c) 2026 Samuele Voltan.
+
+No game data, BIOS, saves, machine states, memory dumps, game images, audio,
+disc-derived generated guest code or compiled emulator/game binaries belong
+to this distributable kit. Users supply and retain their own private inputs.
+No game or BIOS copyright is licensed by this project.

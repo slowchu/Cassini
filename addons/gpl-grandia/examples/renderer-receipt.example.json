@@ -1,0 +1,13 @@
+{
+  "schema": "saturn-kit-offline-renderer-v1",
+  "passed": true,
+  "executable": {"path": "./renderer/graphics-inspector", "bytes": 0, "sha256": "REPLACE_WITH_LOCAL_SHA256"},
+  "library_directory": "./renderer",
+  "library_files": [],
+  "source_files": [],
+  "provenance": {
+    "kind": "explicit-build-or-reviewed-compatibility-receipt",
+    "donor_receipt": {"bytes": 0, "sha256": "REPLACE_WITH_ORIGINAL_QUALIFIED_RECEIPT_HASH"},
+    "source_policy": "Record the exact bundled source identities that produced this utility. Paths may be receipt-relative. Preserve the original receipt; this is an additive portable utility identity."
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schema": "saturn-kit-addon-provenance-v1",
+  "files": [
+    {
+      "path": "addons/gpl-audio/audio_math.py",
+      "license": "GPL-3.0-only",
+      "origin": "adapted",
+      "sources": [
+        {
+          "path": "reconstruction/work/audio-focus-20261017-session1/compare_delivery.py",
+          "sha256": "03ac59f1967a63c9fb0e9bc4c805c71e2816cdf797471ec749f8d6d9bb170908",
+          "license": "GPL-3.0-only"
+        },
+        {
+          "path": "reconstruction/work/audio-focus-20261017-session1/supply_observer.py",
+          "sha256": "eb5de94804e25bbd17764a30257e08a660eb5b70c8f132d5a80e9167f928c4bc",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "Extracted seven arithmetic/intake definitions; sample rate and PCM channels parameterized.",
+        "Local error helper/counter names replace Grandia live-observer imports."
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/adapter.py",
+      "license": "GPL-3.0-only",
+      "origin": "adapted",
+      "sources": [
+        {
+          "path": "reconstruction/work/audio-focus-20261017-session1/compare_delivery.py",
+          "sha256": "03ac59f1967a63c9fb0e9bc4c805c71e2816cdf797471ec749f8d6d9bb170908",
+          "license": "GPL-3.0-only"
+        },
+        {
+          "path": "reconstruction/work/english-audio-delivery-20261017-session1/compare_audio.py",
+          "sha256": "07e2562db0cc10ece8b9871de15d9165ab2b60833802c898d8648e6b7de69505",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "Historical Grandia source/seed/method/receipt pins replaced with profile and exact artifact-manifest pins.",
+        "Existing packet-quality, generated-window, near-zero/boundary, pad-event and supply-bound calculations retained.",
+        "New input guards, optional unmapped mode and stdio JSON wrapper; no live capture."
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/README.md",
+      "license": "MIT",
+      "origin": "new"
+    },
+    {
+      "path": "addons/gpl-audio/requirements.txt",
+      "license": "MIT",
+      "origin": "new"
+    },
+    {
+      "path": "addons/gpl-audio/LICENSE.txt",
+      "license": "GPL-3.0-only",
+      "origin": "verbatim license text",
+      "sources": [
+        {
+          "path": "reconstruction/LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "license": "GPL-3.0-only"
+        }
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/provenance.json",
+      "license": "MIT",
+      "origin": "new metadata"
+    },
+    {
+      "path": "tests/test_audio_delivery.py",
+      "license": "MIT",
+      "origin": "new synthetic tests"
+    },
+    {
+      "path": "addons/gpl-audio/windows_process_audio.cpp",
+      "license": "GPL-3.0-only",
+      "origin": "adapted",
+      "sources": [
+        {
+          "path": "reconstruction/tools/windows_process_audio.cpp",
+          "sha256": "b3e341b57ec6f775c95b3270df5b626a8ab3fb98414bada6e88d697362b899c8",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "Only Grandia home/image/output policy and corresponding CLI/self-check paths replaced with explicit allowed image/private-root inputs.",
+        "WASAPI process-tree API, sample format, packet bounds/timestamps/flags, callback lifetime and duration/watchdog logic retained.",
+        "Not compiled or captured during extraction."
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/windows_host.py",
+      "license": "GPL-3.0-only",
+      "origin": "extracted",
+      "sources": [
+        {
+          "path": "reconstruction/tools/windows_host_wait.py",
+          "sha256": "41a149ffecf8161fed8e4f1427da7a9a9032076739af9494148a34ee37575488",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "Exact pin, PE layout/section and Target definitions retained without historical observer CLI or ProjectPaths dependency."
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/windows_audio_events.py",
+      "license": "GPL-3.0-only",
+      "origin": "adapted",
+      "sources": [
+        {
+          "path": "reconstruction/tools/windows_audio_events.py",
+          "sha256": "8b3b58133f3106e40eae635af2282757fc639ebc3fa05ef109b46e8eb9b43ed0",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "Grandia fixed roots/helper hash/symbolizer path replaced with explicit profile pins, output root and optional exact counter-symbol/marker policy.",
+        "Original QPC, scalar snapshot, event-ledger, multiplicity/boundary/uncertainty and synthetic self-check logic retained.",
+        "No live process observation during extraction."
+      ]
+    },
+    {
+      "path": "addons/gpl-audio/windows_capture.py",
+      "license": "GPL-3.0-only",
+      "origin": "new conservative GPL integration",
+      "sources": [
+        {
+          "path": "reconstruction/tools/windows_process_audio.cpp",
+          "sha256": "b3e341b57ec6f775c95b3270df5b626a8ab3fb98414bada6e88d697362b899c8",
+          "license": "GPL-3.0-only"
+        }
+      ],
+      "changes": [
+        "New default-plan-only profile driver for extracted acquisition utility; --execute needed for bounded owned helper subprocess."
+      ]
+    }
+  ],
+  "no_game_data": true
+}

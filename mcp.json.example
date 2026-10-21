@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "cassini": {
+      "command": "python",
+      "args": [
+        "-B",
+        "C:/Cassini/cassini.py",
+        "mcp",
+        "--profile",
+        "C:/private/saturn-profiles/grandia.local.json"
+      ]
+    }
+  }
+}

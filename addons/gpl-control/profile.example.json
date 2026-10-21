@@ -1,0 +1,45 @@
+{
+  "schema": "saturn-kit-profile-v1",
+  "game": "your-saturn-game",
+  "input_roots": ["inputs"],
+  "output_root": "outputs",
+  "allow_external_tools": true,
+  "control": {
+    "python": {"path": "C:/path/to/python.exe", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "adapter": {"path": "C:/Cassini/addons/gpl-control/adapter.py", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "source_pins": [
+      {"path": "C:/Cassini/addons/gpl-control/ymir_bridge_client.py", "bytes": 12591, "sha256": "66a1b03b9db5231d67b61ba17c020728076fbc2002504dea160ceeafef37f070"}
+    ],
+    "timeout_seconds": 300,
+    "native": {
+      "player": {"path": "inputs/native/saturn.exe", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+      "disc": {"path": "inputs/media/game.cue", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+      "files": [
+        {"path": "inputs/media/track.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+      ],
+      "arguments": ["--cue", "{disc}", "--clock", "2000-01-01T00:00:00", "--headless", "--smc-log=off"],
+      "save": {"path": "inputs/seeds/native-backup.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+      "disposable_seed": true,
+      "capture_frames": [30],
+      "timeout_seconds": 180
+    },
+    "original": {
+      "player": {"path": "inputs/ymir/Ymir.exe", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+      "disc": {"path": "inputs/media/game.cue", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+      "media": [
+        {"path": "inputs/media/track.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+      ],
+      "arguments": ["--profile", "{profile}", "--disc", "{disc}", "--automation", "{session}", "--paused", "--debug"],
+      "files": [
+        {"pin": {"path": "inputs/ymir/Ymir.toml.in", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}, "target": "Ymir.toml", "template": true},
+        {"pin": {"path": "inputs/ymir/bios.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}, "target": "roms/ipl/bios.bin"},
+        {"pin": {"path": "inputs/ymir/smpc.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}, "target": "state/smpc.bin"}
+      ],
+      "save": {"pin": {"path": "inputs/seeds/ymir-backup.bin", "bytes": 0, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}, "target": "bup-int.bin", "disposable_seed": true},
+      "bridge_build_identity": {"replace": "exact build_identity object from the pinned research executable"},
+      "frame_limit": 36000,
+      "timeout_seconds": 180,
+      "request_timeout_seconds": 130
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "cassini",
+  "version": "0.2.1",
+  "description": "Cassini: Saturn recomp inspection, bounded replay/capture, save transport and audio evidence workflows with optional GPL tools.",
+  "license": "MIT",
+  "keywords": [
+    "saturn",
+    "recomp",
+    "graphics",
+    "debugging",
+    "mcp"
+  ]
+}

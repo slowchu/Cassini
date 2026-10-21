@@ -1,0 +1,49 @@
+// saturn-recomp runtime — what the video chips share with each other and with
+// the host window: VDP1 (vdp1.cpp), VDP2 (vdp2.cpp), the raster and the bus
+// (video.cpp), the window (host.cpp).
+#pragma once
+#include <cstdint>
+#include <cstdio>
+#include <string>
+#include <vector>
+
+// ---- VDP1 (vdp1.cpp) --------------------------------------------------------------------
+extern uint8_t g_vdp1_vram[0x80000];                 // big-endian, as the bus sees it
+void vdp1_init();
+uint32_t vdp1_reg_read(uint32_t off, int size);      // 0x05D00000 + off
+void vdp1_reg_write(uint32_t off, uint32_t v, int size);
+uint32_t vdp1_fb_read(uint32_t off, int size);       // the draw framebuffer, 0x05C80000 + off
+void vdp1_fb_write(uint32_t off, uint32_t v, int size);
+bool vdp1_frame_change_requested();                  // pending manual exchange only; one-cycle stays deferred
+void vdp1_vblank_out(bool defer_auto_draw = false);  // erase and frame change; normally starts PTMR 2 drawing
+void vdp1_start_auto_draw();                         // after OUT DMA when the edge already exchanged banks
+void vdp1_early_out_window(bool open);               // diagnostic window, not saved hardware state
+uint64_t vdp1_early_out_requests();                   // change/erase writes in that window; each is logged
+void vdp1_vblank_in();                               // arm VBE sampling for the following poll
+void vdp1_latch_vblank_erase();                      // sample after interrupt delivery, erase at OUT
+void vdp1_tick(uint64_t now);                        // the end of a draw
+uint16_t vdp1_dot(int x, int y, bool dd);           // the sprite dot VDP2 shows at x, line y (dd: double-density, 2 lines a framebuffer line)
+uint64_t vdp1_frame_changes();
+uint64_t vdp1_draws();
+void vdp1_dump(FILE* f);                             // VRAM, the draw framebuffer, the registers
+bool vdp1_interp_field(bool compose);                // --interp: a frame in between for this field?
+void vdp1_interp_scroll(uint8_t* regs);              // ... and VDP2's scroll registers for it
+void vdp1_next_draw_keys(std::vector<uint64_t> keys); // --interp: what each command of the next draw is
+
+// ---- VDP2 (vdp2.cpp) --------------------------------------------------------------------
+extern uint8_t g_vdp2_vram[0x80000], g_vdp2_cram[0x1000], g_vdp2_regs[0x200];
+struct Frame {
+    int w = 0, h = 0;
+    std::vector<uint32_t> px;                       // 0x00RRGGBB, w*h, top row first
+};
+void vdp2_compose(Frame& out, int completed_parity = -1); // explicit parity retains the other DD field
+const Frame& video_last_frame();                    // one completed display history; does not advance DD
+int vdp2_lines();                                    // 224, 240 or 256 (TVMD VRESO)
+
+void write_png(const std::string& path, const Frame& f);   // png.cpp
+
+// ---- --video (movie.cpp) ----------------------------------------------------------------
+bool movie_on();
+std::string movie_wav();                             // where the sound goes for it
+void movie_frame(const Frame& f);                    // each field, as composed
+void movie_finish();                                 // after sound_close: join the sound to the pictures

@@ -1,0 +1,9 @@
+{
+  "schema": "saturn-kit-profile-v1",
+  "game": "example-game",
+  "input_roots": [
+    "."
+  ],
+  "output_root": "outputs",
+  "allow_external_tools": false
+}
