@@ -77,6 +77,15 @@ reader and paired capture. Use the explicit build recipes and existing
 dependencies; nothing builds automatically. Optional audio analysis also needs
 NumPy already available.
 
+## View and export textures
+
+The renderer add-on's `textures` command shows every texture a frame's VDP1
+command list uses, with its VRAM address, and saves each one as a PNG plus raw
+bytes, along with a page to browse them. It works from Ymir's
+**Debug > Dump all memory** or any emulator's saved video memory; no
+recompiled game is needed. See
+[View and export textures from an emulator](addons/gpl-renderer/README.md#view-and-export-textures-from-an-emulator).
+
 ## Connect an agent
 
 Configure an MCP client to launch the server with absolute paths:

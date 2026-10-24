@@ -16,7 +16,7 @@ import runpy
 
 ADDON = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ADDON))
-from saturn_graphics import build_reader, decode, inputs, legacy_vdp1, offline, policy
+from saturn_graphics import build_reader, decode, inputs, legacy_vdp1, offline, policy, textures
 
 
 class ExtractedGraphicsTests(unittest.TestCase):
@@ -260,6 +260,111 @@ class ExtractedGraphicsTests(unittest.TestCase):
         self.assertNotIn("images", capture["state"]["vdp2"]["production"])
         self.assertEqual(calls[0][1], str(ADDON))
         self.assertIn("saturn_graphics", calls[0][0])
+
+
+class TextureExportTests(unittest.TestCase):
+    setUp, tearDown = ExtractedGraphicsTests.setUp, ExtractedGraphicsTests.tearDown
+
+    @staticmethod
+    def put(buffer, address, value):
+        buffer[address:address + 2] = value.to_bytes(2, "big")
+
+    def memories(self):
+        """Sprites in each texture mode over 2048-colour CRAM, sprite type 0, mixed RGB."""
+        vram, cram, regs = bytearray(inputs.SIZES["vdp1_vram"]), bytearray(4096), bytearray(512)
+        self.put(regs, 0x0E, 0x1000); self.put(regs, 0xE0, 0x0020)
+        self.put(cram, 0x11 * 2, 0x001F); self.put(cram, 0x103 * 2, 0x7C00); self.put(cram, 3 * 2, 0x03E0)
+        def sprite(slot, mode, colr, address, width, height, pmod=0):
+            base = slot * 32
+            self.put(vram, base + 4, mode << 3 | pmod); self.put(vram, base + 6, colr)
+            self.put(vram, base + 8, address // 8); self.put(vram, base + 10, (width // 8) << 8 | height)
+        sprite(0, 0, 0x0010, 0x2000, 8, 1)                          # 4bpp bank: 0, 1, F (end code), 1...
+        vram[0x2000:0x2004] = bytes((0x01, 0xF1, 0x11, 0x11))
+        sprite(1, 1, 0x1000 // 8, 0x2100, 8, 1)                     # lookup table: RGB red, CRAM 3
+        vram[0x2100:0x2104] = bytes((0x12, 0x12, 0x12, 0x12))
+        self.put(vram, 0x1002, 0x801F); self.put(vram, 0x1004, 0x0003)
+        sprite(2, 4, 0x0100, 0x2200, 8, 1)                          # 8bpp bank: CRAM 0x103
+        vram[0x2200:0x2208] = bytes(8 * [3])
+        sprite(3, 5, 0, 0x2300, 8, 1)                               # RGB: green, transparent, end code, shadow code
+        for i, v in enumerate((0x83E0, 0, 0x7FFF, 0x07FE, 0x83E0, 0x83E0, 0x83E0, 0x83E0)):
+            self.put(vram, 0x2300 + 2 * i, v)
+        sprite(4, 0, 0x0010, 0x2000, 8, 1)                          # same texture and colours again
+        sprite(5, 1, 0x1100 // 8, 0x2400, 8, 1)                     # its table is all zero
+        vram[0x2400:0x2404] = bytes((0x12, 0x30, 0x00, 0x45))
+        self.put(vram, 6 * 32, 0x8000)
+        return bytes(vram), bytes(cram), bytes(regs)
+
+    def export(self, name):
+        vram, cram, regs = self.memories()
+        out = policy.fresh_output(self.output / name)
+        return textures.export(vram, cram, regs, set(range(0, 512, 2)), {"kind": "synthetic"}, [], out), out
+
+    def pixels(self, out, entry):
+        from PIL import Image
+        with Image.open(out / entry["file"]) as image:
+            data = image.convert("RGBA").tobytes()
+        return [tuple(data[i:i + 4]) for i in range(0, len(data), 4)]
+
+    def test_each_mode_coloured_as_production(self):
+        report, out = self.export("modes")
+        found = {e["address"]: e for e in report["textures"]}
+        self.assertEqual(report["summary"], dict(commands=6, textured_commands=6, textures=5, distinct_texture_bytes=5,
+                                                 skipped=0, walk_end=report["summary"]["walk_end"]))
+        red, clear = (248, 0, 0, 255), (0, 0, 0, 0)
+        bank = found[0x2000]
+        self.assertEqual(self.pixels(out, bank)[:4], [clear, red, clear, red])
+        self.assertEqual(bank["texel_counts"]["end_code"], 1)
+        self.assertEqual([u["command_address"] for u in bank["uses"]], [0, 128])
+        self.assertEqual(self.pixels(out, found[0x2100])[:2], [red, (0, 248, 0, 255)])
+        self.assertEqual(set(self.pixels(out, found[0x2200])), {(0, 0, 248, 255)})
+        self.assertEqual(self.pixels(out, found[0x2300])[:4], [(0, 248, 0, 255), clear, clear, (0, 0, 0, 128)])
+        self.assertIsNone(bank["index_file"])
+        self.assertEqual(found[0x2400]["index_file"], f"indices/{found[0x2400]['texture_id'][:16]}.png")
+        for name in ("textures.json", "textures.txt", "index.html", found[0x2400]["index_file"]):
+            self.assertTrue((out / name).is_file())
+        self.assertIn("data:image/png;base64,", (out / "index.html").read_text(encoding="utf-8"))
+
+    def test_ids_are_stable_and_separate_bytes_from_colours(self):
+        first, _ = self.export("first")
+        second, _ = self.export("second")
+        self.assertEqual([(e["texture_id"], e["colour_id"]) for e in first["textures"]],
+                         [(e["texture_id"], e["colour_id"]) for e in second["textures"]])
+        self.assertEqual(len({e["colour_id"] for e in first["textures"]}), 5)
+
+    def test_raw_and_ymir_memories(self):
+        vram, cram, regs = self.memories()
+        swap = lambda data: bytes(data[i ^ 1] for i in range(len(data)))
+        (self.source / "vram.bin").write_bytes(swap(vram)); (self.source / "cram.bin").write_bytes(swap(cram))
+        loaded = textures.raw_memories(self.source / "vram.bin", self.source / "cram.bin", swap_bytes=True)
+        self.assertEqual(loaded[:3], (vram, cram, loaded[2]))
+        self.assertEqual(loaded[3], set())
+        self.assertEqual(textures.settings(loaded[2], loaded[3])["captured_registers"]["SPCTL"], False)
+        folder = self.source / "ymir"
+        folder.mkdir()
+        (folder / "vdp1-vram.bin").write_bytes(vram); (folder / "vdp2-cram.bin").write_bytes(cram)
+        (folder / "T-0000G_VDP2_registers_05F80000_512B.bin").write_bytes(regs)
+        loaded = textures.ymir_dumps(folder)
+        self.assertEqual(loaded[:4], (vram, cram, regs, set(range(0, 512, 2))))
+        self.assertEqual(loaded[4]["kind"], "ymir-memory-dump")
+        (folder / "T-0001G_VDP2_registers_05F80000_512B.bin").write_bytes(regs)
+        with self.assertRaises(ValueError):
+            textures.ymir_dumps(folder)
+        (folder / "vdp2-cram.bin").write_bytes(b"short")
+        with self.assertRaises(ValueError):
+            textures.ymir_dumps(folder, folder / "T-0000G_VDP2_registers_05F80000_512B.bin")
+
+    def test_textures_cli_from_ymir_folder(self):
+        from saturn_graphics import __main__ as cli
+        vram, cram, regs = self.memories()
+        folder = self.source / "dumps"
+        folder.mkdir()
+        (folder / "vdp1-vram.bin").write_bytes(vram); (folder / "vdp2-cram.bin").write_bytes(cram)
+        argv = ["saturn_graphics", "--profile", str(self.profile), "textures", "--ymir-dumps", str(folder), "--out", str(self.output / "cli")]
+        with patch.object(sys, "argv", argv), contextlib.redirect_stdout(io.StringIO()) as printed:
+            self.assertEqual(cli.main(), 0)
+        self.assertIn("5 textures", printed.getvalue())
+        report = policy.read_json(self.output / "cli/textures.json")
+        self.assertIn("VDP2 registers not captured: RAMCTL, SPCTL, SDCTL, CRAOFB. Colours use assumed values for them.", report["limits"])
 
 
 if __name__ == "__main__":

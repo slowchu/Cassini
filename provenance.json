@@ -407,15 +407,15 @@
       "path": "addons/gpl-renderer/PROVENANCE.json",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 27164,
-      "sha256": "80e16d33548e7da1664719ecd7d396bbc550101c03711b406f26d066d853692c"
+      "bytes": 27912,
+      "sha256": "15f8d0466f9be7f40b2acdf136e2ad8aa4ec1b021304e9c8e501d82cb9c6f46b"
     },
     {
       "path": "addons/gpl-renderer/README.md",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 5465,
-      "sha256": "8ffc3d57f7d654c61850204d4d61dd4a294c9746697dbb656a35738bb8bd495d"
+      "bytes": 7656,
+      "sha256": "422f53a87cebba732562b8c5c8a6aa6fe8fe9e79d7a2e31582789ef98a5c6aec"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/__init__.py",
@@ -428,8 +428,8 @@
       "path": "addons/gpl-renderer/saturn_graphics/__main__.py",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 7719,
-      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521"
+      "bytes": 9552,
+      "sha256": "6531ee8bad8fa238bc4f346d22d9a35d0acdee645648b6c9783e50423236564c"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/build_reader.py",
@@ -481,11 +481,18 @@
       "sha256": "eb40b590164fa52e3774a9bb5902c8cdd56bbc053af2c7738130220b118991ff"
     },
     {
+      "path": "addons/gpl-renderer/saturn_graphics/textures.py",
+      "license": "GPL-3.0-only",
+      "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
+      "bytes": 16569,
+      "sha256": "d9f7298ce6621fbb69e891f380d5726e7af638f3e0c6d0d8daff8f57233b8dc3"
+    },
+    {
       "path": "addons/gpl-renderer/tests/test_graphics.py",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 14177,
-      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec"
+      "bytes": 20736,
+      "sha256": "cab12db076036c739caa3acb321511a60a3063eec4887cab13f2eea317d96a4c"
     },
     {
       "path": "addons/gpl-saves/adapter.py",
@@ -659,8 +666,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6040,
-      "sha256": "ce7acad44be47588493863980b136e6466f027acf159a03ecba522458bc2b769",
+      "bytes": 6505,
+      "sha256": "b49ed865a34b0ea4afc78e2766af2b24b7a5ebebda00b7df0188334a84fe8d9b",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },

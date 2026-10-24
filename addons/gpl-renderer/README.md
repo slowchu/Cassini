@@ -7,6 +7,52 @@ for supported native dumps or Ymir states; comparing already-exported neutral
 captures and PNGs works with the core tools. Rendering needs a compatible
 runtime, and Ymir states also need a compatible reader.
 
+## View and export textures from an emulator
+
+`textures` finds every texture VDP1's command list uses and shows its VRAM
+address, size and colour mode. It saves each texture as a PNG with its raw
+bytes, and writes `index.html`, a self-contained page showing them all. It needs
+no recompiled game, renderer build or reader: an emulator's saved video memory
+is enough.
+
+With Ymir, pause on the scene, then choose **Debug > Dump all memory**. For
+exact colours, also choose **Debug > Open memory viewer**, pick the
+**VDP2 registers** region and press **Dump**. Both go to Ymir's dumps folder,
+shown in Settings > General. Without the registers file, common settings are
+assumed and the report says so. Then, from this add-on directory, with
+Python 3.11+ and Pillow:
+
+```text
+python -B -m saturn_graphics --profile ABS_PROFILE textures --ymir-dumps ABS_YMIR_DUMPS_FOLDER --out ABS_FRESH_OUTPUT
+```
+
+From another emulator, save VDP1 VRAM (512 KiB), colour RAM (4 KiB) and, if it
+can, VDP2's registers (512 bytes). Add `--swap-bytes` if it saves 16-bit words
+little-endian:
+
+```text
+python -B -m saturn_graphics --profile ABS_PROFILE textures --vdp1-vram ABS_VRAM --cram ABS_CRAM [--vdp2-registers ABS_REGISTERS] [--swap-bytes] --out ABS_FRESH_OUTPUT
+```
+
+Native dumps and the other inspection inputs (`--native`, `--original-fixture`,
+`--ymir-state`) work too. The profile only names the folders inputs may come
+from and where outputs go:
+
+```json
+{"schema": "saturn-kit-profile-v1", "game": "my-game", "input_roots": ["ABS_YMIR_DUMPS_FOLDER"], "output_root": "ABS_OUTPUT_FOLDER"}
+```
+
+Each PNG is named by two hashes: the texture's bytes, then the colours it was
+drawn with. A texture keeps its name wherever the game loads it in VRAM, in any
+capture, which is what a texture-replacement pack would look it up by. Colours
+follow the production renderer's VDP1 texel and VDP2 sprite rules, without
+Gouraud shading, colour calculation, priority or flips. When a texture's
+current colours are all transparent, the page shows its texel values in grey
+instead. VDP2 background cells and bitmaps are not exported yet. The images are
+the game's own graphics: keep them private.
+
+## Inside this add-on
+
 This add-on contains the qualified Python inspector, its retained VDP1 decoder,
 Saturn register map, original-state reader source and complete small production
 compositor source closure. It lives in `addons/gpl-renderer`. The former

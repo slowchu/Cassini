@@ -460,14 +460,14 @@
     },
     {
       "path": "README.md",
-      "bytes": 5465,
-      "sha256": "8ffc3d57f7d654c61850204d4d61dd4a294c9746697dbb656a35738bb8bd495d",
+      "bytes": 7656,
+      "sha256": "422f53a87cebba732562b8c5c8a6aa6fe8fe9e79d7a2e31582789ef98a5c6aec",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Updated generic directory naming, runtime-selection command and compatible-API documentation link.",
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Updated generic directory naming, runtime-selection command and compatible-API documentation link. Texture export: added the textures command, Ymir/raw video-memory inputs, tests and documentation.",
       "prior_kit_path": "addons/gpl-grandia/README.md",
       "prior_identity": {
         "bytes": 4161,
@@ -492,8 +492,8 @@
     },
     {
       "path": "saturn_graphics/__main__.py",
-      "bytes": 7719,
-      "sha256": "ce06575d4766ee932583d888fc96ad3d47d1b0b33d75853158f8ccd17f3d0521",
+      "bytes": 9552,
+      "sha256": "6531ee8bad8fa238bc4f346d22d9a35d0acdee645648b6c9783e50423236564c",
       "license": "GPL-3.0-only",
       "origin": {
         "donor": "inspector/__main__.py",
@@ -502,7 +502,7 @@
           "sha256": "6f5dfb39d686e015d54c21cf81d023e0a87611ea421fdd49085d8ea633ba831a"
         }
       },
-      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately. Cassini polish: Added build-harness --runtime argument and forwarding.",
+      "modification": "Profile/path/utility policy and import seams adapted; retained decoder/render algorithms checked separately. Cassini polish: Added build-harness --runtime argument and forwarding. Texture export: added the textures command, Ymir/raw video-memory inputs, tests and documentation.",
       "prior_kit_path": "addons/gpl-grandia/saturn_graphics/__main__.py",
       "prior_identity": {
         "bytes": 7582,
@@ -637,15 +637,26 @@
       }
     },
     {
+      "path": "saturn_graphics/textures.py",
+      "bytes": 16569,
+      "sha256": "d9f7298ce6621fbb69e891f380d5726e7af638f3e0c6d0d8daff8f57233b8dc3",
+      "license": "GPL-3.0-only",
+      "origin": {
+        "kind": "new agent-kit tooling or preserved GPL3 licence text",
+        "date": "2026-10-24"
+      },
+      "modification": "New texture export: production texel/sprite colour rules ported to Python; no game values."
+    },
+    {
       "path": "tests/test_graphics.py",
-      "bytes": 14177,
-      "sha256": "81b900916bc63a980362cddd6bc454cd46564a0bafbc56a49cfe22372cdb05ec",
+      "bytes": 20736,
+      "sha256": "cab12db076036c739caa3acb321511a60a3063eec4887cab13f2eea317d96a4c",
       "license": "GPL-3.0-only",
       "origin": {
         "kind": "new agent-kit tooling or preserved GPL3 licence text",
         "date": "2026-10-21"
       },
-      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Added synthetic/mock external-runtime, rejection, closure, CLI and old-shim cases.",
+      "modification": "New portable policy, workflow, build/test or metadata glue; no game values. Cassini polish: Added synthetic/mock external-runtime, rejection, closure, CLI and old-shim cases. Texture export: added the textures command, Ymir/raw video-memory inputs, tests and documentation.",
       "prior_kit_path": "addons/gpl-grandia/tests/test_graphics.py",
       "prior_identity": {
         "bytes": 9324,
