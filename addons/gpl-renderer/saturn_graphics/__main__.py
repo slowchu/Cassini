@@ -3,6 +3,7 @@
 import argparse
 from pathlib import Path
 
+from . import textures
 from .policy import configure
 from .decode import compare_reports, inspect_snapshot
 from .inputs import fresh_output, native_dump, original_fixture, original_state, pin, private, read_json
@@ -52,6 +53,14 @@ def text_report(report):
     return "\n".join(lines + ["", "Limits:", *report["limits"], v1["order_limit"]]) + "\n"
 
 
+def load_snapshot(args, out):
+    if args.native: return native_dump(args.native)
+    if args.original_fixture: return original_fixture(args.original_fixture)
+    if not args.reader_build or not args.paired_capture:
+        raise ValueError("Original state requires its frozen reader build and paired capture")
+    return original_state(args.ymir_state, args.reader_build, args.paired_capture, out)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", required=True, type=Path)
@@ -69,6 +78,16 @@ def main():
     p.add_argument("--out", type=Path, required=True)
     modes = p.add_mutually_exclusive_group(required=True)
     modes.add_argument("--harness", type=Path); modes.add_argument("--decode-only", action="store_true")
+    p = sub.add_parser("textures", help="export every texture VDP1's command list uses, with addresses and a viewer page")
+    src = p.add_mutually_exclusive_group(required=True)
+    src.add_argument("--ymir-dumps", type=Path, help="Ymir's dumps folder after Debug > Dump all memory")
+    src.add_argument("--vdp1-vram", type=Path, help="raw 512 KiB VDP1 VRAM from any emulator; needs --cram")
+    src.add_argument("--native", type=Path); src.add_argument("--original-fixture", type=Path); src.add_argument("--ymir-state", type=Path)
+    p.add_argument("--cram", type=Path, help="raw 4 KiB colour RAM, with --vdp1-vram")
+    p.add_argument("--vdp2-registers", type=Path, help="raw 512-byte VDP2 registers; without them common settings are assumed")
+    p.add_argument("--swap-bytes", action="store_true", help="the raw memories hold little-endian 16-bit words")
+    p.add_argument("--reader-build", type=Path); p.add_argument("--paired-capture", type=Path)
+    p.add_argument("--out", type=Path, required=True)
     p = sub.add_parser("diff", help="every represented field plus every rendered pixel")
     p.add_argument("--before", required=True, type=Path); p.add_argument("--after", required=True, type=Path)
     p.add_argument("--out", required=True, type=Path); p.add_argument("--premise", type=Path)
@@ -81,13 +100,20 @@ def main():
         print(build_reader(args.out, args.compiler, args.include)); return 0
     out = fresh_output(args.out)
     try:
-        if args.job == "inspect":
-            if args.native: snapshot = native_dump(args.native)
-            elif args.original_fixture: snapshot = original_fixture(args.original_fixture)
+        if args.job == "textures":
+            if args.ymir_dumps: memories = textures.ymir_dumps(args.ymir_dumps, args.vdp2_registers)
+            elif args.vdp1_vram:
+                if not args.cram:
+                    raise ValueError("--vdp1-vram also needs --cram")
+                memories = textures.raw_memories(args.vdp1_vram, args.cram, args.vdp2_registers, args.swap_bytes)
             else:
-                if not args.reader_build or not args.paired_capture:
-                    raise ValueError("Original state requires its frozen reader build and paired capture")
-                snapshot = original_state(args.ymir_state, args.reader_build, args.paired_capture, out)
+                snapshot = load_snapshot(args, out)
+                memories = (snapshot.parts["vdp1_vram"], snapshot.parts["cram"], snapshot.parts["vdp2_registers"],
+                            snapshot.known2, snapshot.provenance, snapshot.limits)
+            report = textures.export(*memories, out)
+            print(f"{report['summary']['textures']} textures: {out / 'index.html'}"); return 0
+        if args.job == "inspect":
+            snapshot = load_snapshot(args, out)
             production = render(snapshot, args.harness, out) if args.harness else None
             report = inspect_snapshot(snapshot, production)
             if production and snapshot.reference:
