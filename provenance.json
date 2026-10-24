@@ -666,8 +666,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6505,
-      "sha256": "b49ed865a34b0ea4afc78e2766af2b24b7a5ebebda00b7df0188334a84fe8d9b",
+      "bytes": 10361,
+      "sha256": "198b7bb553b8ad68f554fcdfad082c6cf7a1bc4c67359759184e97d1e2244de8",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },
