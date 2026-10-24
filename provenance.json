@@ -222,13 +222,6 @@
       "basis": "Conservative inherited project GPL classification; original source has no separate file grant"
     },
     {
-      "path": "addons/gpl-grandia/adapter.py",
-      "license": "GPL-3.0-only",
-      "origin": "New compatibility launcher for the renamed optional GPL renderer; no renderer code copied",
-      "bytes": 452,
-      "sha256": "c53d012c8484b6128b691eb969759028742e4c7c7f5528d16c184423c7677873"
-    },
-    {
       "path": "addons/gpl-renderer/adapter.py",
       "license": "GPL-3.0-only",
       "origin": "New compatibility launcher for the renamed optional GPL renderer; no renderer code copied",
@@ -407,15 +400,15 @@
       "path": "addons/gpl-renderer/PROVENANCE.json",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 27912,
-      "sha256": "15f8d0466f9be7f40b2acdf136e2ad8aa4ec1b021304e9c8e501d82cb9c6f46b"
+      "bytes": 27966,
+      "sha256": "c529c7dc995bbced1cfdb8920b4b425b617fab58f49cd238293c632fe11060a8"
     },
     {
       "path": "addons/gpl-renderer/README.md",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 7656,
-      "sha256": "422f53a87cebba732562b8c5c8a6aa6fe8fe9e79d7a2e31582789ef98a5c6aec"
+      "bytes": 7514,
+      "sha256": "32b4cdf2aaa05acafabb1523c6af9e653bd72cb421e286e266914a3a446d5f0b"
     },
     {
       "path": "addons/gpl-renderer/saturn_graphics/__init__.py",
@@ -491,8 +484,8 @@
       "path": "addons/gpl-renderer/tests/test_graphics.py",
       "license": "GPL-3.0-only",
       "origin": "New original Cassini tooling, documentation or synthetic fixture logic",
-      "bytes": 20736,
-      "sha256": "cab12db076036c739caa3acb321511a60a3063eec4887cab13f2eea317d96a4c"
+      "bytes": 20267,
+      "sha256": "ce3c8acaf111aa432e7653fc2c085dae635bbc0c462c9d162580a593c12118f3"
     },
     {
       "path": "addons/gpl-saves/adapter.py",
@@ -666,8 +659,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10361,
-      "sha256": "198b7bb553b8ad68f554fcdfad082c6cf7a1bc4c67359759184e97d1e2244de8",
+      "bytes": 10464,
+      "sha256": "431a92342aa84abfdd00fe1edaeaabb2859d6aebf15c76bb1f2eb2c538499b97",
       "license": "MIT",
       "origin": "New original kit code/docs/config or synthetic fixture-generating test logic"
     },

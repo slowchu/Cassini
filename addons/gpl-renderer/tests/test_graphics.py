@@ -12,7 +12,6 @@ import shlex
 import subprocess
 import contextlib
 import io
-import runpy
 
 ADDON = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ADDON))
@@ -202,13 +201,6 @@ class ExtractedGraphicsTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(cli.main(), 0)
         build.assert_called_once_with(destination, compiler, runtime)
-
-    def test_old_adapter_shim_forwarded(self):
-        shim = ADDON.parent / "gpl-grandia/adapter.py"
-        with patch.object(runpy, "run_path") as run:
-            exec(compile(shim.read_text(encoding="utf-8"), str(shim), "exec"), {"__name__": "__main__", "__file__": str(shim)})
-        run.assert_called_once_with(str(ADDON / "adapter.py"), run_name="__main__")
-        self.assertEqual({path.name for path in shim.parent.iterdir()}, {"adapter.py"})
 
     def test_explicit_reader_builder_mocked(self):
         compiler = self.base / "synthetic-compiler"
