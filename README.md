@@ -211,5 +211,6 @@ python -B check_provenance.py
 Cassini was called saturn-kit. The `saturn_kit` module, `saturn-kit-*` schemas,
 `saturn-*` skill names and `saturn-kit.py` launcher still work. Plugin
 configurations must rename `SATURN_KIT_PROFILE` to `CASSINI_PROFILE` and
-restart. Pinned source and program hashes in a profile must match your
-installed copy.
+restart. The old `addons/gpl-grandia` folder has been removed: point profiles at
+`addons/gpl-renderer` instead. Pinned source and program hashes in a profile
+must match your installed copy.

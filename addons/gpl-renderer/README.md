@@ -55,12 +55,11 @@ the game's own graphics: keep them private.
 
 This add-on contains the qualified Python inspector, its retained VDP1 decoder,
 Saturn register map, original-state reader source and complete small production
-compositor source closure. It lives in `addons/gpl-renderer`. The former
-`addons/gpl-grandia/adapter.py` path is a small forwarding shim; it contains no
-copy of the backend or production sources. Update profile pins when updating
-the kit. Profiles using the shim must also pin `gpl-renderer/adapter.py` in
-`graphics.source_pins`; the core verifies these files before launching it.
-No Grandia reconstruction checkout or game build profile is required.
+compositor source closure. It lives in `addons/gpl-renderer`; the old
+`addons/gpl-grandia` forwarding path has been removed. Update profile pins when
+updating the kit; the core verifies `graphics.source_pins` before launching
+the adapter. No Grandia reconstruction checkout or game build profile is
+required.
 
 The MIT core calls `adapter.py --request ABS_JSON --out ABS_FRESH_DIRECTORY`.
 Requests contain `command`, `arguments`, `profile` and optionally `profile_path`.
